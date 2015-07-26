@@ -1,3 +1,11 @@
+a{
+	 -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+	
+}
+
 .navbar-inverse {
     background-color: #3E433E ;
     border-color: #FCEAF4;
@@ -23,6 +31,11 @@
     color: #FFF;
     background-color: #00A3D9;
     border-color: #00A3D9;
+}
+
+.btn-info :hover{
+    background: greenyellow;
+    padding-left: 15px;
 }
 
 .wrap{	
@@ -64,3 +77,24 @@
 }
 
 /* END FOOTER */
+
+
+/* Loading Page */
+#page-loader{
+	position:fixed!important;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:999999;
+	opacity: 0.4,
+	 transition:  1s ease-in-out;
+    -moz-transition:  1s ease-in-out; /* FF 4 */
+    -webkit-transition:  1s ease-in-out; /* Safari & Chrome */
+    -o-transition:  1s ease-in-out; /* Opera */
+	
+	background:#eee url(../img/Loading1.gif) no-repeat 50% 50%;
+	padding:1em 1.2em;
+	display:none
+}

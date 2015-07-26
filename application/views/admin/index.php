@@ -38,6 +38,7 @@
 		<script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
 		<script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
 		<script src="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/loading.js"></script>
 		<script type="text/javascript">
 			// <![CDATA[
 			$(document).ready(function () {
