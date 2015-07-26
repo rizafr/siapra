@@ -27,6 +27,7 @@
 		</style>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/style.css" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/step.css" media="screen">
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
@@ -36,9 +37,11 @@
 		
 		<script src="<?php echo base_url(); ?>aset/js/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
-		<script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
 		<script src="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.js"></script>
 		<script src="<?php echo base_url(); ?>aset/js/loading.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/step.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/bootstrap-tooltip.js"></script>
 		<script type="text/javascript">
 			// <![CDATA[
 			$(document).ready(function () {
@@ -118,7 +121,7 @@
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-briefcase icon-white"> </i> Manajemen Perkara <span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
-							<li><a tabindex="-1" onclick="alert('see you next time.. :)')" href="<?php echo base_url(); ?>#"> Proses Perkara</a></li>
+							<li><a tabindex="-1"  href="<?php echo base_url(); ?>admin/proses_perkara"> Proses Perkara</a></li>
 							<li><a tabindex="-1" onclick="alert('see you next time.. :)')" href="<?php echo base_url(); ?>#"> Proses Penahanan</a></li>
 							</ul>
 						</li>

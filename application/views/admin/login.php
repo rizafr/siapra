@@ -96,7 +96,11 @@
 									?>
 								</select>
 								</td></tr>
-								<tr><td></td><td><input type="submit" class="btn btn-success" value="Login"></td></tr>
+								<tr>
+									<td></td>
+									<td><input type="submit" class="btn btn-success" value="Login"></td>
+								</tr>
+								
 							</table>
 							
 						</form>

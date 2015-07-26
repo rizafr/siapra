@@ -376,6 +376,11 @@ class Admin extends CI_Controller {
 		}
 	}	
 	
+	public function proses_perkara() {
+		$a['page']	= "l_proses_perkara";
+		$this->load->view('admin/index', $a);
+	} 
+	
 	public function manage_admin() {
 		if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
 			redirect("admin/login");
