@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>.:: ASAMURAT (Aplikasi SederhanA Manajemen sURAT) ::.</title>
+    <title>.:: SIAPRA (Sistem Informasi Administrasi dan Penanganan Perkara) ::.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
 	<style type="text/css">
@@ -26,6 +26,7 @@
 	
 	</style>
     <link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/style.css" media="screen">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
@@ -41,7 +42,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <span class="navbar-brand"><strong style="font-family: verdana; margin-left: 310px; text-align: center">ASAMURAT (Aplikasi SederhanA Manajemen sURAT)</strong></span>
+          <span class="navbar-brand"><strong style="font-family: verdana; margin-left: 240px; text-align: center">.:: SIAPRA (Sistem Informasi Administrasi dan Penanganan Perkara) ::.</strong></span>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -70,9 +71,9 @@
 			 </div>
 		</div>
 		
-		<div class="well" style="width: 400px; margin: 20px auto; border: solid 1px #d9d9d9; padding: 30px 20px; border-radius: 8px">
+		<div class="login animated flipInX">
 		<form action="<?php echo base_URL(); ?>index.php/admin/do_login" method="post">
-		<legend>Login Admin</legend>	
+		<div class="headerLogin">Silakan Login</div>	
 		<?php echo $this->session->flashdata("k"); ?>
 		<table align="center" style="margin-bottom: 0" class="table-form" width="90%">
 			<tr><td width="40%">Username</td><td><input type="text" autofocus name="u" required style="width: 200px" autofocus class="form-control"></td></tr>
@@ -91,15 +92,14 @@
 			</td></tr>
 			<tr><td></td><td><input type="submit" class="btn btn-success" value="Login"></td></tr>
 		</table>
-		<center style="font-size: 11px">Username : <b>admin</b>, Password : <b>admin</b></center>
+		
 		</form>
 		</div><!--/span-->
       </div><!--/row-->
 
     </div><!--/.fluid-container-->
-	<center style="margin-top: -15px;">Versi 1.0 (September 2013) &copy; <a href="http://facebook.com/akhwan90">Nur Akhwan</a> | 
-	<a href="http://nur-akhwan.blogspot.com/">Blog Nur Akhwan</a><br>
-	<span style="color: red">*) Jangan dihilangkan copyright-nya ya, kecuali untuk tugas kuliah... hehe :)</span>
+	<center style="margin-top: -15px;">Proyek Perubahan Diklatpim IV - Sulta <br>
+	<span> Developed by Ratih Pujihati dan Riza Fauzi Rahman</span>
 	</center>
 	
 	<script type="text/javascript">
