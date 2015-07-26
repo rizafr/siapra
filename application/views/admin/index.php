@@ -115,19 +115,20 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-file icon-white"> </i> Buku Agenda <span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-briefcase icon-white"> </i> Manajemen Perkara <span class="caret"></span></a>
+							<ul class="dropdown-menu" aria-labelledby="themes">
+							<li><a tabindex="-1" onclick="alert('see you next time.. :)')" href="<?php echo base_url(); ?>#"> Proses Perkara</a></li>
+							<li><a tabindex="-1" onclick="alert('see you next time.. :)')" href="<?php echo base_url(); ?>#"> Proses Penahanan</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-file icon-white"> </i> Laporan <span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/agenda_surat_masuk"> Surat Masuk</a></li>
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/agenda_surat_keluar"> Surat Keluar</a></li>
 							</ul>
 						</li>
-						<!--<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-briefcase icon-white"> </i> Surat Lainnya <span class="caret"></span></a>
-							<ul class="dropdown-menu" aria-labelledby="themes">
-							<li><a tabindex="-1" onclick="alert('see you next time.. :)')" href="<?php echo base_url(); ?>#"> Surat Keputusan</a></li>
-							<li><a tabindex="-1" onclick="alert('see you next time.. :)')" href="<?php echo base_url(); ?>#"> S P P D</a></li>
-							</ul>
-						</li>-->
+
 						<?php
 							if ($this->session->userdata('admin_level') == "Super Admin") {
 							?>
