@@ -39,10 +39,10 @@
     <script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
     <script src="<?php echo base_url(); ?>aset/js/jquery.chained.js"></script>
   <body style="">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <span class="navbar-brand"><strong style="font-family: verdana; margin-left: 240px; text-align: center">.:: SIAPRA (Sistem Informasi Administrasi dan Penanganan Perkara) ::.</strong></span>
+          <span class="navbar-brand judul">.:: SIAPRA (Sistem Informasi Administrasi dan Penanganan Perkara) ::.</span>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -51,25 +51,31 @@
         </div>
         
       </div>
-    </div>
+    </div>-->
 
 	<?php 
 	$q_instansi	= $this->db->query("SELECT * FROM tr_instansi LIMIT 1")->row();
 	?>
     <div class="container">
-	
-	<br><br>
 
 	<div class="container-fluid" style="margin-top: 30px">
 	
       <div class="row-fluid">
-		<div style="width: 400px; margin: 0 auto">
+	  <div style="width: 800px; margin: 0 auto; text-align:center">
+			<div class="well well-sm">
+				<h2>SELAMAT DATANG </h2>
+				<h3>.:: SIAPRA (Sistem Informasi Administrasi dan Penanganan Perkara) ::.</h3>
+				</div>
+		</div>
+		<div style="width: 400px; margin: 0 auto;">
 			<div class="well well-sm">
 				<img src="<?php echo base_url(); ?>upload/<?php echo $q_instansi->logo; ?>" class="thumbnail span3" style="display: inline; float: left; margin-right: 20px; width: 80px; height: 80px">
 				<h3 style="margin: 5px 0 0.4em 0; font-size: 21px; color: #000; font-weight: bold"><?php echo $q_instansi->nama; ?></h3>
 				<div style="color: #000; font-size: 13px" class="clearfix"><?php echo $q_instansi->alamat; ?></div>
 			 </div>
 		</div>
+		
+		
 		
 		<div class="login animated flipInX">
 		<form action="<?php echo base_URL(); ?>index.php/admin/do_login" method="post">
@@ -98,6 +104,7 @@
       </div><!--/row-->
 
     </div><!--/.fluid-container-->
+	<br/>
 	<center style="margin-top: -15px;">Proyek Perubahan Diklatpim IV - Sulta <br>
 	<span> Developed by Ratih Pujihati dan Riza Fauzi Rahman</span>
 	</center>

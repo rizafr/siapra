@@ -2,6 +2,10 @@
     background-color: #3E433E ;
     border-color: #FCEAF4;
 }
+.judul{
+		
+		margin:0 auto;
+}
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
     color: #FFF;
