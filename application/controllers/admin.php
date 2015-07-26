@@ -10,7 +10,7 @@ class Admin extends CI_Controller {
 			redirect("admin/login");
 		}
 		
-		$a['page']	= "d_amain";
+		$a['page']	= "beranda";
 		
 		$this->load->view('admin/index', $a);
 	}
