@@ -5,12 +5,12 @@
 	<div class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Klasifikasi Surat (Peraturan Menteri Agama Nomor 44 Tahun 2010)</a>
+				<a class="navbar-brand" href="#">Klasifikasi Surat </a>
 			</div>
 		<div class="navbar-collapse collapse navbar-inverse-collapse" style="margin-right: -20px">
 			<ul class="nav navbar-nav navbar-right">
-				<form class="navbar-form navbar-left" method="post" action="<?php echo base_URL(); ?>index.php/admin/klas_surat/cari">
-					<input type="text" class="form-control" name="q" style="width: 200px" placeholder="Kata kunci pencarian ..." required>
+				<form class="navbar-form navbar-left" method="post" action="<?php echo base_URL(); ?>klasifikasi_surat/klas_surat/cari">
+					<input type="text" class="form-control" name="q" style="width: 200px" placeholder="Kata kunci pencarian ..." value="<?php echo (isset($cari)) ? $cari : '' ?>" >
 					<button type="submit" class="btn btn-danger"><i class="icon-search icon-white"> </i> Cari</button>
 				</form>
 			</ul>
@@ -63,7 +63,7 @@
 			?>
 			<td class="ctr">
 				<div class="btn-group">
-					<a href="<?php echo base_URL(); ?>index.php/admin/klas_surat/edt/<?php echo $b->id; ?>" class="btn btn-success btn-sm"><i class="icon-edit icon-white"> </i> Edit</a>
+					<a href="<?php echo base_URL(); ?>klasifikasi_surat/klas_surat/edt/<?php echo $b->id; ?>" class="btn btn-success btn-sm"><i class="icon-edit icon-white"> </i> Edit</a>
 				</div>					
 			</td>
 			<?php 

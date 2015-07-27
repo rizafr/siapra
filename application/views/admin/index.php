@@ -49,7 +49,7 @@
 					$( "#kode_surat" ).autocomplete({
 						source: function(request, response) {
 							$.ajax({ 
-								url: "<?php echo site_url('admin/get_klasifikasi'); ?>",
+								url: "<?php echo site_url('klas_surat/get_klasifikasi'); ?>",
 								data: { kode: $("#kode_surat").val()},
 								dataType: "json",
 								type: "POST",
@@ -65,7 +65,7 @@
 					$( "#dari" ).autocomplete({
 						source: function(request, response) {
 							$.ajax({ 
-								url: "<?php echo site_url('admin/get_instansi_lain'); ?>",
+								url: "<?php echo site_url('klas_surat/get_instansi_lain'); ?>",
 								data: { kode: $("#dari").val()},
 								dataType: "json",
 								type: "POST",
@@ -107,7 +107,7 @@
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-th-list icon-white"> </i> Referensi <span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
-								<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/klas_surat">Klasifikasi Surat</a></li>
+								<li><a tabindex="-1" href="<?php echo base_url(); ?>klasifikasi_surat/klas_surat">Klasifikasi Surat</a></li>
 							</ul>
 						</li>
 						
@@ -126,10 +126,10 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-file icon-white"> </i> Laporan <span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-file icon-white"> </i> Laporan Agenda <span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
-								<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/agenda_surat_masuk"> Surat Masuk</a></li>
-								<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/agenda_surat_keluar"> Surat Keluar</a></li>
+								<li><a tabindex="-1" href="<?php echo base_url(); ?>agenda/agenda_surat_masuk"> Surat Masuk</a></li>
+								<li><a tabindex="-1" href="<?php echo base_url(); ?>agenda/agenda_surat_keluar"> Surat Keluar</a></li>
 							</ul>
 						</li>
 
@@ -139,8 +139,8 @@
 							<li class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-wrench icon-white"> </i> Pengaturan <span class="caret"></span></a>
 								<ul class="dropdown-menu" aria-labelledby="themes">
-									<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/pengguna">Instansi Pengguna</a></li>
-									<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/manage_admin">Manajemen Admin</a></li>
+									<li><a tabindex="-1" href="<?php echo base_url(); ?>pengaturan/pengguna">Instansi Pengguna</a></li>
+									<li><a tabindex="-1" href="<?php echo base_url(); ?>pengaturan/manage_admin">Manajemen Admin</a></li>
 								</ul>
 							</li>
 							<?php 
@@ -150,10 +150,10 @@
 					
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-user icon-white"></i> Administrator <span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-user icon-white"></i> <?php echo $this->session->userdata('admin_nama'); ?> <span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
-								<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/passwod">Ubah Password</a></li>
-								<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/logout">Logout</a></li>
+								<li><a tabindex="-1" href="<?php echo base_url(); ?>pengaturan/passwod">Ubah Password</a></li>
+								<li><a tabindex="-1" href="<?php echo base_url(); ?>logins/logout">Logout</a></li>
 								<li><a tabindex="-1" href="#" target="_blank">Help</a></li>
 							</ul>
 						</li>

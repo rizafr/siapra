@@ -7,7 +7,7 @@
 </div><!-- /.navbar -->
 
 <div class="well">
-<form action="<?php echo base_URL(); ?>index.php/admin/cetak_agenda" target="blank" method="post" accept-charset="utf-8" enctype="multipart/form-data">	
+<form action="<?php echo base_URL(); ?>agenda/cetak_agenda" target="blank" method="post" accept-charset="utf-8" enctype="multipart/form-data">	
 	<input type="hidden" name="tipe" value="<?php echo $this->uri->segment(2); ?>">
 
 	<table class="table-form" width="100%">

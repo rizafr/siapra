@@ -5353,7 +5353,7 @@ a.thumbnail:focus {
 .alert-warning .alert-link {
   color: #e6e6e6;
 }
-.alert-danger {
+.alert-danger, .alert-error {
   background-color: #f04124;
   border-color: #ea2f10;
   color: #ffffff;

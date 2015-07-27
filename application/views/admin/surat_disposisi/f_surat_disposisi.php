@@ -30,7 +30,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 	</div><!-- /.container -->
 </div><!-- /.navbar -->
 	
-	<form action="<?php echo base_URL(); ?>index.php/admin/surat_disposisi/<?php echo $this->uri->segment(3)?>/<?php echo $act; ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+	<form action="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/<?php echo $act; ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 	
 	<input type="hidden" name="idp" value="<?php echo $idp; ?>">
 	<input type="hidden" name="id_surat" value="<?php echo $id_surat; ?>">
@@ -45,7 +45,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 		<tr><td width="20%">Isi Disposisi</td><td><b><textarea name="isi_disposisi" tabindex="2" required style="width: 400px; height: 60px" class="form-control"><?php echo $isi_disposisi; ?></textarea></b></td></tr>	
 		<tr><td colspan="2">
 		<br><button type="submit" class="btn btn-primary" tabindex="6" ><i class="icon icon-ok icon-white"></i> Simpan</button>
-		<a href="<?php echo base_URL(); ?>index.php/admin/surat_disposisi/<?php echo $this->uri->segment(3); ?>" tabindex="7" class="btn btn-success"><i class="icon icon-arrow-left icon-white"></i> Kembali</a>
+		<a href="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3); ?>" tabindex="7" class="btn btn-success"><i class="icon icon-arrow-left icon-white"></i> Kembali</a>
 		</td></tr>
 		</table>
 	</div>

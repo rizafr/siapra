@@ -10,7 +10,7 @@
 
 	<?php echo $this->session->flashdata("k_passwod");?>
 <div class="well">
-<form action="<?php echo base_URL()?>index.php/admin/passwod/simpan" method="post" accept-charset="utf-8" enctype="multipart/form-data">	
+<form action="<?php echo base_URL()?>pengaturan/passwod/simpan" method="post" accept-charset="utf-8" enctype="multipart/form-data">	
 
 	<table class="table-form" width="100%">
 	<tr><td width="20%">Username</td><td><b><input type="text" name="username" class="form-control" readonly value="<?=$this->session->userdata('admin_user')?>" style="width: 200px"></b></td></tr>		

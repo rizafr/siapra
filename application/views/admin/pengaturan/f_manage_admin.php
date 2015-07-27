@@ -28,7 +28,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 	</div><!-- /.container -->
 </div><!-- /.navbar -->
 	
-	<form action="<?php echo base_URL(); ?>index.php/admin/manage_admin/<?php echo $act; ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+	<form action="<?php echo base_URL(); ?>pengaturan/manage_admin/<?php echo $act; ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 	
 	<input type="hidden" name="idp" value="<?php echo $idp; ?>">
 	
@@ -41,7 +41,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 		<tr><td width="20%">Ulangi Password</td><td><b><input type="password" name="password2" required value="<?php echo $password; ?>" id="dari" style="width: 300px" class="form-control" tabindex="3	" ></b></td></tr>
 		<tr><td colspan="2">
 		<br><button type="submit" class="btn btn-primary" tabindex="7" ><i class="icon icon-ok icon-white"></i> Simpan</button>
-		<a href="<?php echo base_URL(); ?>index.php/admin/manage_admin" class="btn btn-success" tabindex="8" ><i class="icon icon-arrow-left icon-white"></i> Kembali</a>
+		<a href="<?php echo base_URL(); ?>pengaturan/manage_admin" class="btn btn-success" tabindex="8" ><i class="icon icon-arrow-left icon-white"></i> Kembali</a>
 		</td></tr>
 		</table>
 	</div>

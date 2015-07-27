@@ -9,8 +9,8 @@
 			</div>
 		<div class="navbar-collapse collapse navbar-inverse-collapse" style="margin-right: -20px">
 			<ul class="nav navbar-nav">
-				<li><a href="<?php echo base_URL(); ?>index.php/admin/surat_disposisi/<?php echo $this->uri->segment(3)?>/add" class="btn-info"><i class="icon-plus-sign icon-white"> </i> Tambah Data</a></li>
-				<li><a href="<?php echo base_URL(); ?>index.php/admin/surat_masuk" class="btn-info"><i class="icon-share icon-white"> </i> Kembali</a></li>
+				<li><a href="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/add" class="btn-info"><i class="icon-plus-sign icon-white"> </i> Tambah Data</a></li>
+				<li><a href="<?php echo base_URL(); ?>admin/surat_masuk" class="btn-info"><i class="icon-share icon-white"> </i> Kembali</a></li>
 			</ul>
 			
 		</div><!-- /.nav-collapse -->
@@ -50,8 +50,8 @@
 			<td><?php echo $b->sifat."<br><i>Batas waktu s.d. ".tgl_jam_sql($b->batas_waktu)."</i>"?></td>
 			<td class="ctr">
 				<div class="btn-group">
-					<a href="<?php echo base_URL(); ?>index.php/admin/surat_disposisi/<?php echo $this->uri->segment(3)?>/edt/<?=$b->id?>" class="btn btn-success btn-sm"><i class="icon-edit icon-white"> </i> Edit</a>
-					<a href="<?php echo base_URL(); ?>index.php/admin/surat_disposisi/<?php echo $this->uri->segment(3)?>/del/<?=$b->id?>" class="btn btn-warning btn-sm" onclick="return confirm('Anda Yakin..?')">
+					<a href="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/edt/<?=$b->id?>" class="btn btn-success btn-sm"><i class="icon-edit icon-white"> </i> Edit</a>
+					<a href="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/del/<?=$b->id?>" class="btn btn-warning btn-sm" onclick="return confirm('Anda Yakin..?')">
 					<i class="icon-trash icon-white"> </i> Hapus</a>
 				</div>					
 			</td>

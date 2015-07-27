@@ -75,10 +75,8 @@
 						</div>
 					</div>
 					
-					
-					
 					<div class="login animated flipInX">
-						<form action="<?php echo base_URL(); ?>index.php/admin/do_login" method="post">
+						<form action="<?php echo base_URL(); ?>logins/do_login" method="post">
 							<div class="headerLogin">Silakan Login</div>	
 							<?php echo $this->session->flashdata("k"); ?>
 							<table align="center" style="margin-bottom: 0" class="table-form" width="90%">

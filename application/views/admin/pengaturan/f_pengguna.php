@@ -6,7 +6,7 @@
 	</div><!-- /.container -->
 </div><!-- /.navbar -->
 	
-	<form action="<?php echo base_URL(); ?>index.php/admin/pengguna/act_edt" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+	<form action="<?php echo base_URL(); ?>pengaturan/pengguna/act_edt" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 		
 	<input type="hidden" name="idp" value="<?php echo $data->id; ?>">
 	<div class="row-fluid well" style="overflow: hidden">
