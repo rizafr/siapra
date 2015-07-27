@@ -16,57 +16,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/index', $a);
 	}
 
-	public function klas_surat() {
-		if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
-			$this->session->set_flashdata("k", "<div id=\"alert\" class=\"alert alert-error\">Maaf Anda belum login. Silakan login terlebih dahulu</div>");
-			redirect("logins/login");
-		}
-		
-		/* pagination */	
-		$total_row		= $this->db->query("SELECT * FROM ref_klasifikasi")->num_rows();
-		$per_page		= 10;
-		
-		$awal	= $this->uri->segment(4); 
-		$awal	= (empty($awal) || $awal == 1) ? 0 : $awal;
-		
-		//if (empty($awal) || $awal == 1) { $awal = 0; } { $awal = $awal; }
-		$akhir	= $per_page;
-		
-		$a['pagi']	= _page($total_row, $per_page, 4, base_url()."admin/klas_surat/p");
-		
-		//ambil variabel URL
-		$act					= $this->uri->segment(3);
-		$idu					= $this->uri->segment(4);
-		
-		$cari					= addslashes($this->input->post('q'));
-
-		//ambil variabel Postingan
-		$idp					= addslashes($this->input->post('idp'));
-		$nama					= addslashes($this->input->post('nama'));
-		$uraian					= addslashes($this->input->post('uraian'));
-	
-		$cari					= addslashes($this->input->post('q'));
-
-		
-		if ($act == "cari") {
-			$a['data']		= $this->db->query("SELECT * FROM ref_klasifikasi WHERE nama LIKE '%$cari%' OR uraian LIKE '%$cari%' ORDER BY id DESC")->result();
-			$a['page']		= "l_klas_surat";
-		} else if ($act == "add") {
-			$a['page']		= "f_klas_surat";
-		} else if ($act == "edt") {
-			$a['datpil']	= $this->db->query("SELECT * FROM ref_klasifikasi WHERE id = '$idu'")->row();	
-			$a['page']		= "f_klas_surat";
-		} else if ($act == "act_edt") {
-			$this->db->query("UPDATE ref_klasifikasi SET nama = '$nama', uraian = '$uraian' WHERE id = '$idp'");
-			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data has been updated</div>");			
-			redirect('admin/klas_surat');
-		} else {
-			$a['data']		= $this->db->query("SELECT * FROM ref_klasifikasi LIMIT $awal, $akhir ")->result();
-			$a['page']		= "l_klas_surat";
-		}
-		
-		$this->load->view('admin/index', $a);
-	}
 	
 	public function surat_masuk() {
 		if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
@@ -244,114 +193,12 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/index', $a);
 	}
 
-	public function surat_disposisi() {
-		if ($this->session->userdata('admin_valid') == FALSE && $this->session->userdata('admin_id') == "") {
-			$this->session->set_flashdata("k", "<div id=\"alert\" class=\"alert alert-error\">Maaf Anda belum login. Silakan login terlebih dahulu</div>");
-			redirect("logins/login");
-		}
-		
-		
-		//ambil variabel URL
-		$act					= $this->uri->segment(4);
-		$idu1					= $this->uri->segment(3);
-		$idu2					= $this->uri->segment(5);
-		
-		$cari					= addslashes($this->input->post('q'));
-
-		//ambil variabel Postingan
-		$idp					= addslashes($this->input->post('idp'));
-		$id_surat				= addslashes($this->input->post('id_surat'));
-		$kpd_yth				= addslashes($this->input->post('kpd_yth'));
-		$isi_disposisi			= addslashes($this->input->post('isi_disposisi'));
-		$sifat					= addslashes($this->input->post('sifat'));
-		$batas_waktu			= addslashes($this->input->post('batas_waktu'));
-		$catatan				= addslashes($this->input->post('catatan'));
-		
-		$cari					= addslashes($this->input->post('q'));
-		
-		/* pagination */	
-		$total_row		= $this->db->query("SELECT * FROM t_disposisi WHERE id_surat = '$idu1'")->num_rows();
-		$per_page		= 10;
-		
-		$awal	= $this->uri->segment(4); 
-		$awal	= (empty($awal) || $awal == 1) ? 0 : $awal;
-		
-		//if (empty($awal) || $awal == 1) { $awal = 0; } { $awal = $awal; }
-		$akhir	= $per_page;
-		
-		$a['pagi']	= _page($total_row, $per_page, 4, base_url()."admin/surat_disposisi/".$idu1."/p");
-		
-		$a['judul_surat']	= gval("t_surat_masuk", "id", "isi_ringkas", $idu1);
-		
-		if ($act == "del") {
-			$this->db->query("DELETE FROM t_disposisi WHERE id = '$idu2'");
-			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data has been deleted </div>");
-			redirect('admin/surat_disposisi/'.$idu2);
-		} else if ($act == "add") {
-			$a['page']		= "f_surat_disposisi";
-		} else if ($act == "edt") {
-			$a['datpil']	= $this->db->query("SELECT * FROM t_disposisi WHERE id = '$idu2'")->row();	
-			$a['page']		= "f_surat_disposisi";
-		} else if ($act == "act_add") {	
-			$this->db->query("INSERT INTO t_disposisi VALUES (NULL, '$id_surat', '$kpd_yth', '$isi_disposisi', '$sifat', '$batas_waktu', '$catatan')");
-			
-			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data has been added</div>");
-			redirect('admin/surat_disposisi/'.$id_surat);
-		} else if ($act == "act_edt") {
-			$this->db->query("UPDATE t_disposisi SET kpd_yth = '$kpd_yth', isi_disposisi = '$isi_disposisi', sifat = '$sifat', batas_waktu = '$batas_waktu', catatan = '$catatan' WHERE id = '$idp'");
-			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data has been updated</div>");			
-			redirect('admin/surat_disposisi/'.$id_surat);
-		} else {
-			$a['data']		= $this->db->query("SELECT * FROM t_disposisi WHERE id_surat = '$idu1' LIMIT $awal, $akhir ")->result();
-			$a['page']		= "l_surat_disposisi";
-		}
-		
-		$this->load->view('admin/index', $a);	
-	}
 	
 		
 	public function proses_perkara() {
 		$a['page']	= "l_proses_perkara";
 		$this->load->view('admin/index', $a);
 	} 
-	
-	
-	public function get_klasifikasi() {
-		$kode 				= $this->input->post('kode',TRUE);
-		
-		$data 				=  $this->db->query("SELECT id, kode, nama FROM ref_klasifikasi WHERE kode LIKE '%$kode%' ORDER BY id ASC")->result();
-		
-		$klasifikasi 		=  array();
-        foreach ($data as $d) {
-			$json_array				= array();
-            $json_array['value']	= $d->kode;
-			$json_array['label']	= $d->kode." - ".$d->nama;
-			$klasifikasi[] 			= $json_array;
-		}
-		
-		echo json_encode($klasifikasi);
-	}
-	
-	public function get_instansi_lain() {
-		$kode 				= $this->input->post('dari',TRUE);
-		
-		$data 				=  $this->db->query("SELECT dari FROM t_surat_masuk WHERE dari LIKE '%$kode%' GROUP BY dari")->result();
-		
-		$klasifikasi 		=  array();
-        foreach ($data as $d) {
-			$klasifikasi[] 	= $d->dari;
-		}
-		
-		echo json_encode($klasifikasi);
-	}
-	
-	public function disposisi_cetak() {
-		$idu = $this->uri->segment(3);
-		$a['datpil1']	= $this->db->query("SELECT * FROM t_surat_masuk WHERE id = '$idu'")->row();	
-		$a['datpil2']	= $this->db->query("SELECT kpd_yth FROM t_disposisi WHERE id = '$idu'")->result();	
-		$a['datpil3']	= $this->db->query("SELECT isi_disposisi, sifat, batas_waktu FROM t_disposisi WHERE id = '$idu'")->result();	
-		$this->load->view('admin/f_disposisi', $a);
-	}
 	
 	
 	
