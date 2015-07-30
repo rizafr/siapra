@@ -2,24 +2,24 @@
 $mode		= $this->uri->segment(4);
 
 if ($mode == "edt" || $mode == "act_edt") {
-	$act		= "act_edt";
-	$idp		= $datpil->id;
-	$id_surat	= $datpil->id_surat;
-	$kpd_yth	= $datpil->kpd_yth;
+	$act			= "act_edt";
+	$id_disposisi	= $datpil->id_disposisi;
+	$id_surat_masuk	= $datpil->id_surat_masuk;
+	$kpd_yth		= $datpil->kpd_yth;
 	$isi_disposisi	= $datpil->isi_disposisi;
-	$sifat		= $datpil->sifat;
-	$batas_waktu= $datpil->batas_waktu;
-	$catatan	= $datpil->catatan;
+	$sifat			= $datpil->sifat;
+	$batas_waktu	= $datpil->batas_waktu;
+	$catatan		= $datpil->catatan;
 	
 } else {
-	$act		= "act_add";
-	$idp		= "";
-	$id_surat	= $this->uri->segment(3);
-	$kpd_yth	= "";
+	$act			= "act_add";
+	$id_disposisi	= "";
+	$id_surat_masuk	= $this->uri->segment(3);
+	$kpd_yth		= "";
 	$isi_disposisi	= "";
-	$sifat		= "";
-	$batas_waktu= "";
-	$catatan	= "";
+	$sifat			= "";
+	$batas_waktu	= "";
+	$catatan		= "";
 }
 ?>
 <div class="navbar navbar-inverse">
@@ -32,8 +32,8 @@ if ($mode == "edt" || $mode == "act_edt") {
 	
 	<form action="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/<?php echo $act; ?>" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 	
-	<input type="hidden" name="idp" value="<?php echo $idp; ?>">
-	<input type="hidden" name="id_surat" value="<?php echo $id_surat; ?>">
+	<input type="hidden" name="id_disposisi" value="<?php echo $id_disposisi; ?>">
+	<input type="hidden" name="id_surat_masuk" value="<?php echo $id_surat_masuk; ?>">
 	
 	<div class="alert alert-info">Perihal Surat</b> : <i><?php echo $judul_surat; ?></i></div>
 

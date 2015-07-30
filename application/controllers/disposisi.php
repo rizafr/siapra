@@ -14,24 +14,27 @@ class Disposisi extends CI_Controller {
 		
 		//ambil variabel URL
 		$act					= $this->uri->segment(4);
-		$idu1					= $this->uri->segment(3);
-		$idu2					= $this->uri->segment(5);
+		$id_suratu				= $this->uri->segment(3);
+		$id_dispu				= $this->uri->segment(5);
 		
 		$cari					= addslashes($this->input->post('q'));
 
 		//ambil variabel Postingan
-		$idp					= addslashes($this->input->post('idp'));
-		$id_surat				= addslashes($this->input->post('id_surat'));
-		$kpd_yth				= addslashes($this->input->post('kpd_yth'));
-		$isi_disposisi			= addslashes($this->input->post('isi_disposisi'));
-		$sifat					= addslashes($this->input->post('sifat'));
-		$batas_waktu			= addslashes($this->input->post('batas_waktu'));
+		$id_disposisi			= addslashes($this->input->post('id_disposisi'));
+		$id_surat_masuk			= addslashes($this->input->post('id_surat_masuk'));
+		$tujuan_disposisi		= addslashes($this->input->post('tujuan_disposisi'));
+		$isi_instruksi			= addslashes($this->input->post('isi_instruksi'));
+		$tgl_instruksi			= addslashes($this->input->post('tgl_instruksi'));
+		$waktu_lama_instruksi	= addslashes($this->input->post('waktu_lama_instruksi'));
+		$paraf_kasi				= addslashes($this->input->post('paraf_kasi'));
+		$paraf_kajari 			= addslashes($this->input->post('paraf_kajari'));
+		$tgl_disposisi			= addslashes($this->input->post('tgl_disposisi'));
 		$catatan				= addslashes($this->input->post('catatan'));
 		
 		$cari					= addslashes($this->input->post('q'));
 		
 		/* pagination */	
-		$total_row		= $this->db->query("SELECT * FROM t_disposisi WHERE id_surat = '$idu1'")->num_rows();
+		$total_row		= $this->db->query("SELECT * FROM disposisi WHERE id_surat_masuk = '$id_suratu'")->num_rows();
 		$per_page		= 10;
 		
 		$awal	= $this->uri->segment(4); 
@@ -40,30 +43,30 @@ class Disposisi extends CI_Controller {
 		//if (empty($awal) || $awal == 1) { $awal = 0; } { $awal = $awal; }
 		$akhir	= $per_page;
 		
-		$a['pagi']	= _page($total_row, $per_page, 4, base_url()."admin/surat_disposisi/".$idu1."/p");
+		$a['pagi']	= _page($total_row, $per_page, 4, base_url()."disposisi/surat_disposisi/".$id_suratu."/p");
 		
-		$a['judul_surat']	= gval("t_surat_masuk", "id", "isi_ringkas", $idu1);
+		$a['judul_surat']	= gval("surat_masuk", "id_surat_masuk", "perihal_surat_masuk", $id_suratu);
 		
 		if ($act == "del") {
-			$this->db->query("DELETE FROM t_disposisi WHERE id = '$idu2'");
-			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data has been deleted </div>");
-			redirect('disposisi/surat_disposisi/'.$idu2);
+			$this->db->query("DELETE FROM disposisi WHERE id_disposisi = '$id_dispu'");
+			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil dihapus </div>");
+			redirect('disposisi/surat_disposisi/'.$id_dispu);
 		} else if ($act == "add") {
 			$a['page']		= "surat_disposisi/f_surat_disposisi";
 		} else if ($act == "edt") {
-			$a['datpil']	= $this->db->query("SELECT * FROM t_disposisi WHERE id = '$idu2'")->row();	
+			$a['datpil']	= $this->db->query("SELECT * FROM disposisi WHERE id_disposisi = '$id_dispu'")->row();	
 			$a['page']		= "surat_disposisi/f_surat_disposisi";
 		} else if ($act == "act_add") {	
-			$this->db->query("INSERT INTO t_disposisi VALUES (NULL, '$id_surat', '$kpd_yth', '$isi_disposisi', '$sifat', '$batas_waktu', '$catatan')");
+			$this->db->query("INSERT INTO disposisi VALUES (NULL, '$id_surat_masuk', '$isi_instruksi', '$tgl_instruksi', '$waktu_lama_instruksi', '$paraf_kasi', '$paraf_kajari', '$tujuan_disposisi', '$tgl_disposisi', '$catatan')");
 			
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil ditambahkan</div>");
-			redirect('disposisi/surat_disposisi/'.$id_surat);
+			redirect('disposisi/surat_disposisi/'.$id_surat_masuk);
 		} else if ($act == "act_edt") {
-			$this->db->query("UPDATE t_disposisi SET kpd_yth = '$kpd_yth', isi_disposisi = '$isi_disposisi', sifat = '$sifat', batas_waktu = '$batas_waktu', catatan = '$catatan' WHERE id = '$idp'");
+			$this->db->query("UPDATE disposisi SET tujuan_disposisi = '$tujuan_disposisi', isi_instruksi = '$isi_instruksi', tgl_instruksi = '$tgl_instruksi', waktu_lama_instruksi = '$waktu_lama_instruksi', tgl_disposisi = '$tgl_disposisi', paraf_kajari = '$paraf_kajari', paraf_kasi = '$paraf_kasi', catatan = '$catatan' WHERE id_disposisi = '$id_disposisi'");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil diubah</div>");			
-			redirect('disposisi/surat_disposisi/'.$id_surat);
+			redirect('disposisi/surat_disposisi/'.$id_surat_masuk);
 		} else {
-			$a['data']		= $this->db->query("SELECT * FROM t_disposisi WHERE id_surat = '$idu1' LIMIT $awal, $akhir ")->result();
+			$a['data']		= $this->db->query("SELECT * FROM disposisi WHERE id_surat_masuk = '$id_suratu' LIMIT $awal, $akhir ")->result();
 			$a['page']		= "surat_disposisi/l_surat_disposisi";
 		}
 		

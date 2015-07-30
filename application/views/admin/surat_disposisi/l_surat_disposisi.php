@@ -29,8 +29,9 @@
 		<tr>
 			<th width="5%">ID</th>
 			<th width="25%">Tujuan Disposisi</th>
-			<th width="35%">Isi Disposisi</th>
-			<th width="20%">Sifat, Batas Waktu</th>
+			<th width="35%">Isi Instruksi</th>
+			<th width="20%">Tanggal Instruksi</th>
+			<th width="20%">Waktu Lama Instruksi</th>
 			<th width="15%">Aksi</th>
 		</tr>
 	</thead>
@@ -45,13 +46,14 @@
 		?>
 		<tr>
 			<td class="ctr"><?php echo $no;?></td>
-			<td><?php echo $b->kpd_yth; ?></td>
-			<td><?php echo $b->isi_disposisi; ?></td>
-			<td><?php echo $b->sifat."<br><i>Batas waktu s.d. ".tgl_jam_sql($b->batas_waktu)."</i>"?></td>
+			<td><?php echo $b->tujuan_disposisi; ?></td>
+			<td><?php echo $b->isi_instruksi; ?></td>
+			<td><?php echo $b->tgl_instruksi?></td>
+			<td><?php echo $b->waktu_lama_instruksi?></td>
 			<td class="ctr">
 				<div class="btn-group">
-					<a href="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/edt/<?=$b->id?>" class="btn btn-success btn-sm"><i class="icon-edit icon-white"> </i> Edit</a>
-					<a href="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/del/<?=$b->id?>" class="btn btn-warning btn-sm" onclick="return confirm('Anda Yakin..?')">
+					<a href="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/edt/<?=$b->id_disposisi?>" class="btn btn-success btn-sm"><i class="icon-edit icon-white"> </i> Edit</a>
+					<a href="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/del/<?=$b->id_disposisi?>" class="btn btn-warning btn-sm" onclick="return confirm('Anda Yakin..?')">
 					<i class="icon-trash icon-white"> </i> Hapus</a>
 				</div>					
 			</td>
