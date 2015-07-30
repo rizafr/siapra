@@ -46,10 +46,26 @@
 			// <![CDATA[
 			$(document).ready(function () {
 				$(function () {
+					$( "#kode_surat_masuk" ).autocomplete({
+						source: function(request, response) {
+							$.ajax({ 
+								url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
+								data: { kode: $("#kode_surat_masuk").val()},
+								dataType: "json",
+								type: "POST",
+								success: function(data){
+									response(data);
+								}    
+							});
+						},
+					});
+				});
+				
+				$(function () {
 					$( "#kode_surat" ).autocomplete({
 						source: function(request, response) {
 							$.ajax({ 
-								url: "<?php echo site_url('klas_surat/get_klasifikasi'); ?>",
+								url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
 								data: { kode: $("#kode_surat").val()},
 								dataType: "json",
 								type: "POST",
@@ -65,7 +81,7 @@
 					$( "#dari" ).autocomplete({
 						source: function(request, response) {
 							$.ajax({ 
-								url: "<?php echo site_url('klas_surat/get_instansi_lain'); ?>",
+								url: "<?php echo site_url('klasifikasi_surat/get_instansi_lain'); ?>",
 								data: { kode: $("#dari").val()},
 								dataType: "json",
 								type: "POST",

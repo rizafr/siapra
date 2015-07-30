@@ -25,11 +25,29 @@ class Disposisi extends CI_Controller {
 		$tujuan_disposisi		= addslashes($this->input->post('tujuan_disposisi'));
 		$isi_instruksi			= addslashes($this->input->post('isi_instruksi'));
 		$tgl_instruksi			= addslashes($this->input->post('tgl_instruksi'));
-		$waktu_lama_instruksi	= addslashes($this->input->post('waktu_lama_instruksi'));
+		$batas_waktu			= addslashes($this->input->post('batas_waktu'));
+		
+		$kini = new DateTime('now');  
+		$kemarin = new DateTime($batas_waktu);  
+		$kemarin->diff($kini)->format('%a hari %h jam %i menit % detik'); 
+ 
+		$datetime1 = new DateTime('now');
+		$datetime2 = new DateTime($batas_waktu);
+		$difference = $datetime1->diff($datetime2);
+		
+		$waktu_lama_instruksi	= $kemarin->diff($kini)->format('%a');
+		
+		
 		$paraf_kasi				= addslashes($this->input->post('paraf_kasi'));
 		$paraf_kajari 			= addslashes($this->input->post('paraf_kajari'));
 		$tgl_disposisi			= addslashes($this->input->post('tgl_disposisi'));
 		$catatan				= addslashes($this->input->post('catatan'));
+		
+		if($paraf_kasi=='1'){
+			$status_disposisi		= 1 ;
+		}else if($paraf_kajari=='1'){
+			$status_disposisi		= 2 ;
+		}
 		
 		$cari					= addslashes($this->input->post('q'));
 		
@@ -57,12 +75,25 @@ class Disposisi extends CI_Controller {
 			$a['datpil']	= $this->db->query("SELECT * FROM disposisi WHERE id_disposisi = '$id_dispu'")->row();	
 			$a['page']		= "surat_disposisi/f_surat_disposisi";
 		} else if ($act == "act_add") {	
-			$this->db->query("INSERT INTO disposisi VALUES (NULL, '$id_surat_masuk', '$isi_instruksi', '$tgl_instruksi', '$waktu_lama_instruksi', '$paraf_kasi', '$paraf_kajari', '$tujuan_disposisi', '$tgl_disposisi', '$catatan')");
+			$this->db->query("INSERT INTO disposisi(
+													`id_disposisi` ,
+													`id_surat_masuk` ,
+													`isi_instruksi` ,
+													`tgl_instruksi` ,
+													`batas_waktu` ,
+													`waktu_lama_instruksi` ,
+													`paraf_kasi` ,
+													`paraf_kajari` ,
+													`tujuan_disposisi` ,
+													`tgl_disposisi` ,
+													`catatan`
+													) 
+						VALUES (NULL, '$id_surat_masuk', '$isi_instruksi', NOW(),'$batas_waktu', '$waktu_lama_instruksi', '$paraf_kasi', '$paraf_kajari', '$tujuan_disposisi', NOW() , '$catatan')");
 			
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil ditambahkan</div>");
 			redirect('disposisi/surat_disposisi/'.$id_surat_masuk);
 		} else if ($act == "act_edt") {
-			$this->db->query("UPDATE disposisi SET tujuan_disposisi = '$tujuan_disposisi', isi_instruksi = '$isi_instruksi', tgl_instruksi = '$tgl_instruksi', waktu_lama_instruksi = '$waktu_lama_instruksi', tgl_disposisi = '$tgl_disposisi', paraf_kajari = '$paraf_kajari', paraf_kasi = '$paraf_kasi', catatan = '$catatan' WHERE id_disposisi = '$id_disposisi'");
+			$this->db->query("UPDATE disposisi SET tujuan_disposisi = '$tujuan_disposisi', isi_instruksi = '$isi_instruksi', batas_waktu = '$batas_waktu', waktu_lama_instruksi = '$waktu_lama_instruksi',  paraf_kajari = '$paraf_kajari', paraf_kasi = '$paraf_kasi', catatan = '$catatan' WHERE id_disposisi = '$id_disposisi'");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil diubah</div>");			
 			redirect('disposisi/surat_disposisi/'.$id_surat_masuk);
 		} else {
@@ -77,9 +108,9 @@ class Disposisi extends CI_Controller {
 		
 	public function disposisi_cetak() {
 		$idu = $this->uri->segment(3);
-		$a['datpil1']	= $this->db->query("SELECT * FROM t_surat_masuk WHERE id = '$idu'")->row();	
-		$a['datpil2']	= $this->db->query("SELECT kpd_yth FROM t_disposisi WHERE id = '$idu'")->result();	
-		$a['datpil3']	= $this->db->query("SELECT isi_disposisi, sifat, batas_waktu FROM t_disposisi WHERE id = '$idu'")->result();	
+		$a['datpil1']	= $this->db->query("SELECT * FROM surat_masuk WHERE id_surat_masuk = '$idu'")->row();	
+		$a['datpil2']	= $this->db->query("SELECT tujuan_disposisi FROM disposisi WHERE id_disposisi = '$idu'")->result();	
+		$a['datpil3']	= $this->db->query("SELECT d.isi_instruksi, m.status_surat_masuk, d.batas_waktu FROM disposisi d, surat_masuk m  WHERE d.id_disposisi = '$idu' AND d.id_surat_masuk=d.id_surat_masuk ")->result();	
 		$this->load->view('admin/surat_disposisi/disposisi_cetak', $a);
 	}
 	

@@ -60,7 +60,7 @@ class Klasifikasi_surat extends CI_Controller {
 	
 		
 	public function get_klasifikasi() {
-		$kode 				= $this->input->post('kode',TRUE);
+		$kode 				= $this->input->post('kode_surat_masuk',TRUE);
 		
 		$data 				=  $this->db->query("SELECT id, kode, nama FROM ref_klasifikasi WHERE kode LIKE '%$kode%' ORDER BY id ASC")->result();
 		
