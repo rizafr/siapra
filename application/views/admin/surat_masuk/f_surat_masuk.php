@@ -18,7 +18,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 	
 } else {
 	$act				= "act_add";
-	$id_surat_masuk				= "";
+	$id_surat_masuk		= "";
 	$no_agenda			= gli("surat_masuk", "no_agenda", 4);
 	$index_surat_masuk 	="";
 	$kode_surat_masuk	= "";
@@ -49,7 +49,20 @@ if ($mode == "edt" || $mode == "act_edt") {
 	<div class="col-lg-6">
 		<table  class="table-form">
 		<tr><td width="20%">No. Agenda</td><td><b><input type="text" name="no_agenda" autofocus tabindex="1" required value="<?php echo $no_agenda; ?>" style="width: 100px" class="form-control"></b></td></tr>
-		<tr><td width="20%">Status Surat</td><td><b><input type="text" name="status_surat_masuk" tabindex="2" required value="<?php echo $status_surat_masuk; ?>" id="status_surat_masuk" style="width: 75px" class="form-control"></b></td></tr>		
+		<tr><td width="20%">Status Surat</td><td><b>
+			<select name="status_surat_masuk" class="form-control" tabindex="3" style="width: 200px" required><option value=""> - Status Surat - </option>
+			<?php
+				$l_status_surat_masuk	= array('Penting','Biasa','Rahasia');
+				
+				for ($i = 0; $i < sizeof($l_status_surat_masuk); $i++) {
+					if ($l_status_surat_masuk[$i] == $status_surat_masuk) {
+						echo "<option selected value='".$l_status_surat_masuk[$i]."'>".$l_status_surat_masuk[$i]."</option>";
+					} else {
+						echo "<option value='".$l_status_surat_masuk[$i]."'>".$l_status_surat_masuk[$i]."</option>";
+					}				
+				}			
+			?>			
+			</select>
 		<tr><td width="20%">Asal Surat</td><td><b><input type="text" name="asal_surat_masuk" tabindex="3" required value="<?php echo $asal_surat_masuk; ?>" id="asal_surat_masuk" style="width: 400px" class="form-control"></b></td></tr>		
 		<tr><td width="20%">Nomor Surat</td><td><b><input type="text" name="no_surat_masuk" tabindex="4" required value="<?php echo $no_surat_masuk; ?>"  id="no_surat_masuk" style="width: 300px" class="form-control"></td></tr>	
 		<tr><td width="20%">Uraian</td><td><b><textarea name="perihal_surat_masuk" tabindex="5" required style="width: 400px; height: 90px" class="form-control"><?php echo $perihal_surat_masuk; ?></textarea></b></td></tr>	
