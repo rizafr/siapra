@@ -114,8 +114,8 @@
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-random icon-white"> </i> Manajemen Surat <span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
-								<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/surat_masuk">Surat Masuk</a></li>
-								<li><a tabindex="-1" href="<?php echo base_url(); ?>admin/surat_keluar">Surat Keluar</a></li>
+								<li><a tabindex="-1" href="<?php echo base_url(); ?>surat_masuk/masuk">Surat Masuk</a></li>
+								<li><a tabindex="-1" href="<?php echo base_url(); ?>surat_keluar/keluar">Surat Keluar</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
