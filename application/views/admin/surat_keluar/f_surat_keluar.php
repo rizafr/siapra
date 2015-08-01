@@ -40,7 +40,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 	
 	<div class="col-lg-6">
 		<table width="100%" class="table-form">
-		<tr><td width="20%">No. Agenda</td><td><b><input type="text" autofocus tabindex="1" name="no_agenda" readonly value="<?php echo $no_agenda; ?>" style="width: 100px" class="form-control"></b></td></tr>
+		<tr><td width="20%">No. Agenda</td><td><b><input type="text" autofocus tabindex="1" id="no_agenda" name="no_agenda" readonly value="<?php echo $no_agenda; ?>" style="width: 100px" class="form-control"></b></td></tr>
 		<tr><td width="20%">Tujuan Surat</td><td><b><input type="text" tabindex="2" name="dari" required value="<?php echo $dari; ?>" id="dari" style="width: 400px" class="form-control"></b></td></tr>		
 		<tr><td width="20%">Nomor Surat</td><td><b><input type="text" tabindex="3" name="no_surat" required value="<?php echo $no_surat; ?>" style="width: 300px" class="form-control"></td></tr>
 		<tr><td width="20%">Isi Ringkas</td><td><b><textarea tabindex="4" name="uraian" required style="width: 400px; height: 60px" class="form-control"><?php echo $uraian; ?></textarea></b></td></tr>	

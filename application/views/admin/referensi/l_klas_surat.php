@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-lg-12">
 	
-	<div class="navbar navbar-inverse">
+	<div class="navbar navbar-inverse animated ">
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">Klasifikasi Surat </a>
@@ -35,7 +35,7 @@
 </div>	
 -->
 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover ">
 	<thead>
 		<tr>
 			<th width="10%">Kode</th>

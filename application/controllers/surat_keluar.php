@@ -104,4 +104,20 @@ class Surat_keluar extends CI_Controller {
 		
 		$this->load->view('admin/index', $a);
 	}
+	
+	public function get_no_agenda() {
+		$kode 				= $this->input->post('no_agenda',TRUE);
+		
+		$data 				=  $this->db->query("SELECT perihal,no_agenda FROM surat_masuk WHERE kode LIKE '%$kode%' ORDER BY id ASC")->result();
+		
+		$agenda 			=  array();
+        foreach ($data as $d) {
+			$json_array				= array();
+            $json_array['value']	= $d->no_agenda;
+			$json_array['label']	= $d->no_agenda." - ".$d->perihal;
+			$agenda[] 			= $json_array;
+		}
+		
+		echo json_encode($agenda);
+	}
 }
