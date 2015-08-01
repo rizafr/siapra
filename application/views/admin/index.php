@@ -238,7 +238,7 @@
 	<script src="<?php echo base_url(); ?>aset/js/jquery.nicescroll.js" type="text/javascript"></script>
 	
 	 <!--common script for all pages-->
-    <script src="<?php echo base_url(); ?>aset/js/common-scripts.js"></script>
+    
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(" #alert" ).fadeOut(3000);
