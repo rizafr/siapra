@@ -37,6 +37,20 @@ class Web_model extends CI_Model {
 	}
 	
 	//qhususon...
+	 #memilih jaksa
+    function get_dropdown_list() {
+        $this->db->from('jaksa');
+        $this->db->order_by('nama_jaksa', 'asc');
+        $result = $this->db->get();
+        $return = array();
+        if ($result->num_rows() > 0) {
+            $return[''] = "--Pilih Jaksa--";
+            foreach ($result->result_array() as $row) {
+                $return[$row['id_jaksa']] = $row['nama_jaksa'];
+            }
+        }
+        return $return;
+    }
 	
 	//berita
 	function getBeritaAll() {

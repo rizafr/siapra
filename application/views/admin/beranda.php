@@ -1,25 +1,25 @@
 <div class="clearfix">
 	<div class="row">
-  <div class="col-lg-12">
-	
-	<div class="navbar navbar-inverse animated ">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Beranda</a>
-			</div>
-		<div class="navbar-collapse collapse navbar-inverse-collapse" style="margin-right: -20px">
+		<div class="col-lg-12">
 			
-		</div><!-- /.nav-collapse -->
-		</div><!-- /.container -->
-	</div><!-- /.navbar -->
-
-  </div>
-</div>
-	<section id="main-content">
+			<div class="navbar navbar-inverse wow fadeInDown ">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">Beranda</a>
+					</div>
+					<div class="navbar-collapse collapse navbar-inverse-collapse" style="margin-right: -20px">
+						
+					</div><!-- /.nav-collapse -->
+				</div><!-- /.container -->
+			</div><!-- /.navbar -->
+			
+		</div>
+	</div>
+	<section id="main-content wow fadeInDown">
 		<section class="wrapper">
 			<div class="col-lg-6">
 				<!--widget start-->
-				<section class="panel">
+				<section class="panel wow slideInLeft" data-wow-duration="2s">
 					<div class="twt-feed blue-bg">
 						<h2>Selamat datang</h2>
 						<h1><?php echo $this->session->userdata('admin_nama'); ?></h1>
@@ -49,7 +49,7 @@
 			</div>
 			
 			<!--state overview start-->
-			<div class="row state-overview">
+			<div class="row state-overview wow slideInRight" data-wow-duration="2s">
 				<div class="col-lg-3 col-sm-6">
 					<section class="panel">
 						<div class="symbol terques">
@@ -107,73 +107,12 @@
 			
 			<div class="row">
 				<div class="col-lg-8">
-					<!--custom chart start-->
-					<div class="border-head">
-						<h3>Earning Graph</h3>
-					</div>
-					<div class="custom-bar-chart">
-						<ul class="y-axis">
-							<li><span>100</span></li>
-							<li><span>80</span></li>
-							<li><span>60</span></li>
-							<li><span>40</span></li>
-							<li><span>20</span></li>
-							<li><span>0</span></li>
-						</ul>
-						<div class="bar">
-							<div class="title">JAN</div>
-							<div class="value tooltips" data-original-title="80%" data-toggle="tooltip" data-placement="top">80%</div>
-						</div>
-						<div class="bar ">
-							<div class="title">FEB</div>
-							<div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
-						</div>
-						<div class="bar ">
-							<div class="title">MAR</div>
-							<div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">40%</div>
-						</div>
-						<div class="bar ">
-							<div class="title">APR</div>
-							<div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">55%</div>
-						</div>
-						<div class="bar">
-							<div class="title">MAY</div>
-							<div class="value tooltips" data-original-title="20%" data-toggle="tooltip" data-placement="top">20%</div>
-						</div>
-						<div class="bar ">
-							<div class="title">JUN</div>
-							<div class="value tooltips" data-original-title="39%" data-toggle="tooltip" data-placement="top">39%</div>
-						</div>
-						<div class="bar">
-							<div class="title">JUL</div>
-							<div class="value tooltips" data-original-title="75%" data-toggle="tooltip" data-placement="top">75%</div>
-						</div>
-						<div class="bar ">
-							<div class="title">AUG</div>
-							<div class="value tooltips" data-original-title="45%" data-toggle="tooltip" data-placement="top">45%</div>
-						</div>
-						<div class="bar ">
-							<div class="title">SEP</div>
-							<div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
-						</div>
-						<div class="bar ">
-							<div class="title">OCT</div>
-							<div class="value tooltips" data-original-title="42%" data-toggle="tooltip" data-placement="top">42%</div>
-						</div>
-						<div class="bar ">
-							<div class="title">NOV</div>
-							<div class="value tooltips" data-original-title="60%" data-toggle="tooltip" data-placement="top">60%</div>
-						</div>
-						<div class="bar ">
-							<div class="title">DEC</div>
-							<div class="value tooltips" data-original-title="90%" data-toggle="tooltip" data-placement="top">90%</div>
-						</div>
-					</div>
-					<!--custom chart end-->
+					<!--Grafik Rekapitulasi-->
+					<div id="grafik" class="wow slideInLeft" data-wow-duration="2s" ></div>
 				</div>
 				<div class="col-lg-4">
 					<!--new earning start-->
-					<div class="panel terques-chart">
+					<div class="panel terques-chart wow slideInRight" data-wow-duration="2s">
 						<div class="panel-body chart-texture">
 							<div class="chart">
 								<div class="heading">
@@ -197,7 +136,7 @@
 					<!--new earning end-->
 					
 					<!--total earning start-->
-					<div class="panel green-chart">
+					<div class="panel green-chart wow slideInRight" data-wow-duration="2s">
 						<div class="panel-body">
 							<div class="chart">
 								<div class="heading">
@@ -729,3 +668,58 @@
 		</section>
 	</section>
 </div>
+<script type="text/javascript">
+	
+	$(document).ready(function () {
+		
+		
+		$(function () {
+			$('#grafik').highcharts({
+				title: {
+					text: 'Grafik Rekapitulasi',
+					x: -20 //center
+				},
+				subtitle: {
+					text: 'Tahun 2015',
+					x: -20
+				},
+				xAxis: {
+					categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+					'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+				},
+				yAxis: {
+					title: {
+						text: 'Jumlah'
+					},
+					plotLines: [{
+						value: 0,
+						width: 1,
+						color: '#808080'
+					}]
+				},
+				tooltip: {
+					valueSuffix: ' data'
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'middle',
+					borderWidth: 0
+				},
+				series: [{
+					name: 'Surat Masuk',
+					data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+					}, {
+					name: 'Surat Keluar',
+					data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+					}, {
+					name: 'Proses Perkara',
+					data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+					}, {
+					name: 'Proses Penahanan',
+					data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+				}]
+			});
+		});
+	});
+</script>

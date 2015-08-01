@@ -31,7 +31,8 @@
 		<script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
 		<script src="../bower_components/bootstrap/assets/js/respond.min.js"></script>
 	<![endif]-->
-    <script src="<?php echo base_url(); ?>aset/js/jquery-1.8.3.min.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/jquery-1.11.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/wow.min.js"></script>
     <script src="<?php echo base_url(); ?>aset/js/bootstrap.js"></script>
     <script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
    <body style="">
@@ -58,7 +59,7 @@
 				
 				<div class="row-fluid">
 					<div style="width: 800px; margin: 0 auto; text-align:center">
-						<div class="well well-sm">
+						<div class="well well-sm wow fadeInDown">
 							<h3>SELAMAT DATANG </h3>
 							<h4>.:: SIAPRA (Sistem Informasi Administrasi dan Penanganan Perkara) ::.</h4>
 						</div>
@@ -110,8 +111,10 @@
 			<script type="text/javascript">
 				$(document).ready(function(){
 					$(" #alert" ).fadeOut(3000);
+					 new WOW().init();
 				});
 			</script>
+			
 			
 		</div>
 		

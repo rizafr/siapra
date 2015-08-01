@@ -30,5 +30,10 @@ class Agenda extends CI_Controller {
 			$this->load->view('admin/agenda/agenda_surat_keluar', $a);
 		}
 	}	
+	
+	public function jaksa() {
+		$a['page']	= "agenda/l_laporan_jaksa";
+		$this->load->view('admin/index', $a);
+	} 
 		
 }

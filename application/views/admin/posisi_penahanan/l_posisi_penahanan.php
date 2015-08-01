@@ -11,7 +11,7 @@
 			</div>
 		<div class="navbar-collapse collapse navbar-inverse-collapse" style="margin-right: -20px">
 			<ul class="nav navbar-nav">
-				<li><a href="<?php echo base_URL(); ?>posisi_penahanan/proses_penahanan" class="btn-info"><i class="icon-share icon-white"> </i> Kembali</a></li>
+				<li><a href="<?php echo base_URL(); ?>manajemen_perkara/perkara" class="btn-info"><i class="icon-share icon-white"> </i> Kembali</a></li>
 			</ul>
 			
 		</div><!-- /.nav-collapse -->

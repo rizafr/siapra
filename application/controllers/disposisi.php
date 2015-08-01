@@ -109,8 +109,8 @@ class Disposisi extends CI_Controller {
 	public function disposisi_cetak() {
 		$idu = $this->uri->segment(3);
 		$a['datpil1']	= $this->db->query("SELECT * FROM surat_masuk WHERE id_surat_masuk = '$idu'")->row();	
-		$a['datpil2']	= $this->db->query("SELECT tujuan_disposisi FROM disposisi WHERE id_disposisi = '$idu'")->result();	
-		$a['datpil3']	= $this->db->query("SELECT d.isi_instruksi, m.status_surat_masuk, d.batas_waktu FROM disposisi d, surat_masuk m  WHERE d.id_disposisi = '$idu' AND d.id_surat_masuk=d.id_surat_masuk ")->result();	
+		$a['datpil2']	= $this->db->query("SELECT tujuan_disposisi FROM disposisi WHERE id_surat_masuk = '$idu'")->result();	
+		$a['datpil3']	= $this->db->query("SELECT d.isi_instruksi, m.status_surat_masuk, d.batas_waktu FROM disposisi d, surat_masuk m  WHERE d.id_surat_masuk = '$idu' AND d.id_surat_masuk=d.id_surat_masuk ")->result();	
 		$this->load->view('admin/surat_disposisi/disposisi_cetak', $a);
 	}
 	

@@ -35,7 +35,7 @@
 </div>	
 -->
 
-<table class="table table-bordered table-hover ">
+<table class="table table-bordered table-hover table-striped ">
 	<thead>
 		<tr>
 			<th width="10%">Kode</th>

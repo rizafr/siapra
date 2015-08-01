@@ -58,6 +58,22 @@ class Klasifikasi_surat extends CI_Controller {
 		$this->load->view('admin/index', $a);
 	}
 	
+	
+	public function get_agenda() {
+		$kode 				= $this->input->post('getAgenda',TRUE);
+		
+		$data 				=  $this->db->query("SELECT  no_agenda, perihal_surat_masuk FROM surat_masuk WHERE no_agenda LIKE '%$kode%' ORDER BY no_agenda ASC")->result();
+		
+		$klasifikasi 		=  array();
+        foreach ($data as $d) {
+			$json_array				= array();
+            $json_array['value']	= $d->no_agenda;
+			$json_array['label']	= $d->no_agenda." - ".$d->perihal_surat_masuk;
+			$klasifikasi[] 			= $json_array;
+		}
+		
+		echo json_encode($klasifikasi);
+	}
 		
 	public function get_klasifikasi() {
 		$kode 				= $this->input->post('kode_surat_masuk',TRUE);

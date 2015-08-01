@@ -8,6 +8,7 @@ class Posisi_perkara extends CI_Controller {
 	
 	public function proses_perkara() {
 		$a['page']	= "posisi_perkara/l_proses_perkara";
+		$a['data']		= $this->db->query("SELECT * FROM posisi_perkara")->result();
 		$this->load->view('admin/index', $a);
 	} 
 	

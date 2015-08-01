@@ -28,7 +28,7 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap-reset.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/owl.carousel.css" media="screen">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/animate.min.css" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/animate.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/style.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/step.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.css" />	
@@ -38,96 +38,98 @@
 			<script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
 			<script src="../bower_components/bootstrap/assets/js/respond.min.js"></script>
 		<![endif]-->
-	<script src="<?php echo base_url(); ?>aset/js/jquery.js"></script>		
-	<script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/loading.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/step.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/bootstrap-tooltip.js"></script>
-	
-	<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/main.js"></script> <!-- Resource jQuery -->
-	<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/modernizr.js"></script> <!-- Modernizr -->
-	
-	
-	<script type="text/javascript">
-		// <![CDATA[
-		$(document).ready(function () {
-			$(function () {
-				$( "#kode_surat_masuk" ).autocomplete({
-					source: function(request, response) {
-						$.ajax({ 
-							url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
-							data: { kode: $("#kode_surat_masuk").val()},
-							dataType: "json",
-							type: "POST",
-							success: function(data){
-								response(data);
-							}    
-						});
-					},
+		<script src="<?php echo base_url(); ?>aset/js/jquery.js"></script>		
+		<script src="<?php echo base_url(); ?>aset/js/jquery-1.11.1.min.js"></script>		
+		<script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/loading.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/step.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/bootstrap-tooltip.js"></script>
+		<script src="<?php echo base_url() ?>aset/js/wow.min.js"></script>
+		<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/main.js"></script> <!-- Resource jQuery -->
+		<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/modernizr.js"></script> <!-- Modernizr -->
+		
+		
+		<script type="text/javascript">
+			// <![CDATA[
+			$(document).ready(function () {
+				new WOW().init();
+				$(function () {
+					$( "#kode_surat_masuk" ).autocomplete({
+						source: function(request, response) {
+							$.ajax({ 
+								url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
+								data: { kode: $("#kode_surat_masuk").val()},
+								dataType: "json",
+								type: "POST",
+								success: function(data){
+									response(data);
+								}    
+							});
+						},
+					});
+				});
+				
+				$(function () {
+					$( "#kode_surat" ).autocomplete({
+						source: function(request, response) {
+							$.ajax({ 
+								url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
+								data: { kode: $("#kode_surat").val()},
+								dataType: "json",
+								type: "POST",
+								success: function(data){
+									response(data);
+								}    
+							});
+						},
+					});
+				});
+				
+				$(function () {
+					$( "#getAgenda" ).autocomplete({
+						source: function(request, response) {
+							$.ajax({ 
+								url: "<?php echo site_url('klasifikasi_surat/get_agenda'); ?>",
+								data: { getAgenda: $("#getAgenda").val(),tanggal_perkara: $("#tanggal_perkara").val()},
+								dataType: "json",
+								type: "POST",
+								success: function(data){
+									response(data);
+								}    
+							});
+						},
+					});
+				});
+				
+				$(function () {
+					$( "#dari" ).autocomplete({
+						source: function(request, response) {
+							$.ajax({ 
+								url: "<?php echo site_url('klasifikasi_surat/get_instansi_lain'); ?>",
+								data: { kode: $("#dari").val()},
+								dataType: "json",
+								type: "POST",
+								success: function(data){
+									response(data);
+								}    
+							});
+						},
+					});
+				});
+				
+				
+				$(function() {
+					$( "#tgl_surat" ).datepicker({
+						changeMonth: true,
+						changeYear: true,
+						dateFormat: 'yy-mm-dd'
+					});
 				});
 			});
-			
-			$(function () {
-				$( "#kode_surat" ).autocomplete({
-					source: function(request, response) {
-						$.ajax({ 
-							url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
-							data: { kode: $("#kode_surat").val()},
-							dataType: "json",
-							type: "POST",
-							success: function(data){
-								response(data);
-							}    
-						});
-					},
-				});
-			});
-			
-			$(function () {
-				$( "#no_agenda" ).autocomplete({
-					source: function(request, response) {
-						$.ajax({ 
-							url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
-							data: { kode: $("#kode_surat").val()},
-							dataType: "json",
-							type: "POST",
-							success: function(data){
-								response(data);
-							}    
-						});
-					},
-				});
-			});
-			
-			$(function () {
-				$( "#dari" ).autocomplete({
-					source: function(request, response) {
-						$.ajax({ 
-							url: "<?php echo site_url('klasifikasi_surat/get_instansi_lain'); ?>",
-							data: { kode: $("#dari").val()},
-							dataType: "json",
-							type: "POST",
-							success: function(data){
-								response(data);
-							}    
-						});
-					},
-				});
-			});
-			
-			
-			$(function() {
-				$( "#tgl_surat" ).datepicker({
-					changeMonth: true,
-					changeYear: true,
-					dateFormat: 'yy-mm-dd'
-				});
-			});
-		});
-		// ]]>
-	</script>
+			// ]]>
+		</script>
 		
 	</head>
 	
@@ -162,15 +164,15 @@
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-briefcase icon-white"> </i> Manajemen Perkara <span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
-								<li><a tabindex="-1"  href="<?php echo base_url(); ?>posisi_perkara/proses_perkara"> Proses Perkara</a></li>
-								<li><a tabindex="-1" href="<?php echo base_url(); ?>posisi_penahanan/proses_penahanan"> Proses Penahanan</a></li>
+								<li><a tabindex="-1"  href="<?php echo base_url(); ?>manajemen_perkara/perkara">Perkara & Penahanan </a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-file icon-white"> </i> Laporan Agenda <span class="caret"></span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-file icon-white"> </i> Laporan<span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>agenda/agenda_surat_masuk"> Surat Masuk</a></li>
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>agenda/agenda_surat_keluar"> Surat Keluar</a></li>
+								<li><a tabindex="-1" href="#" onclick="alert('coming soon')">Lap. Jaksa</a></li>
 							</ul>
 						</li>
 						
@@ -210,7 +212,7 @@
 		?>
 		<div class="container">
 			<div class="wrap">
-				<div class="page-header animated fadeIn slow" id="banner">
+				<div class="page-header animated fadeIn" data-wow-duration="2s" id="banner">
 					<div class="row">
 						<div class="" style="padding: 15px 15px 0 15px;">
 							<div class="well well-sm">
@@ -230,18 +232,26 @@
 			<h4 style="font-weight: bold">Proyek Perubahan Diklatpim IV - Sulta </h4>
 			<span> Developed by Ratih Pujihati dan Riza Fauzi Rahman</span>
 			<h6>&copy;  2015. Waktu Eksekusi : {elapsed_time}, Penggunaan Memori : {memory_usage}</h6>
+			 <a href="#" class="go-top">
+            <i class="icon-angle-up"></i>
+        </a>
 		</div>
 		
 	</body>
 	<script src="<?php echo base_url(); ?>aset/js/owl.carousel.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>aset/js/count.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>aset/js/jquery.nicescroll.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>aset/js/highcharts.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>aset/js/exporting.js" type="text/javascript"></script>
 	
-	 <!--common script for all pages-->
+	<!--common script for all pages-->
     
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(" #alert" ).fadeOut(3000);
 		});
 	</script>
+	
+	
+		
 </html>
