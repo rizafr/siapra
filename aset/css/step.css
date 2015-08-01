@@ -39,7 +39,7 @@ span.round-tab {
     line-height: 70px;
     display: inline-block;
     border-radius: 100px;
-    background: #fff;
+    background: #e0e0e0;
     border: 2px solid #e0e0e0;
     z-index: 2;
     position: absolute;
@@ -51,8 +51,13 @@ span.round-tab i{
     color:#555555;
 }
 .wizard li.active span.round-tab {
-    background: #99B2FF;
-    border: 2px solid #99B2FF;
+    background: #7396FF;
+    border: 2px solid #7396FF;
+    
+}
+.wizard li.finished span.round-tab {
+    background: #4CFFA6;
+    border: 2px solid #4CFFA6;
     
 }
 .wizard li.active span.round-tab i{

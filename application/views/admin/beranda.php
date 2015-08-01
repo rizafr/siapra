@@ -215,13 +215,16 @@
 					<!--total earning end-->
 				</div>
 			</div>
+			<br />
+			<br />
+			<br />
 			<div class="row">
 				<div class="col-lg-4">
 					<!--user info table start-->
 					<section class="panel">
 						<div class="panel-body">
 							<a href="#" class="task-thumb">
-								<img src="<img src="<?php echo base_url(); ?>aset/img/avatar1.jpg" alt="">
+								<img src="<?php echo base_url(); ?>aset/img/avatar1.jpg" alt="">
 							</a>
 							<div class="task-thumb-details">
 								<h1><a href="#">Anjelina Joli</a></h1>
@@ -395,19 +398,19 @@
 												<p><a href="#">Anjelina Joli</a> added new album <span><a href="#" class="blue">PARTY TIME</a></span></p>
 												<div class="album">
 													<a href="#">
-														<img alt="" src="<img src="<?php echo base_url(); ?>aset/img/sm-img-1.jpg">
+														<img src="<?php echo base_url(); ?>aset/img/sm-img-1.jpg">
 													</a>
 													<a href="#">
-														<img alt="" src="<img src="<?php echo base_url(); ?>aset/img/sm-img-2.jpg">
+														<img src="<?php echo base_url(); ?>aset/img/sm-img-2.jpg">
 													</a>
 													<a href="#">
-														<img alt="" src="<img src="<?php echo base_url(); ?>aset/img/sm-img-3.jpg">
+														<img src="<?php echo base_url(); ?>aset/img/sm-img-3.jpg">
 													</a>
 													<a href="#">
-														<img alt="" src="<img src="<?php echo base_url(); ?>aset/img/sm-img-1.jpg">
+														<img src="<?php echo base_url(); ?>aset/img/sm-img-1.jpg">
 													</a>
 													<a href="#">
-														<img alt="" src="img/sm-img-2.jpg">
+														<img alt="" src="<?php echo base_url(); ?>aset/img/sm-img-2.jpg">
 													</a>
 												</div>
 											</div>
@@ -588,7 +591,7 @@
 						<aside class="post-highlight yellow v-align">
 							<div class="panel-body text-center">
 								<div class="pro-thumb">
-									<img src="<img src="<?php echo base_url(); ?>aset/img/ring.jpg" alt="">
+									<img src="<?php echo base_url(); ?>aset/img/ring.jpg" alt="">
 								</div>
 							</div>
 						</aside>
@@ -662,7 +665,7 @@
 									<div class="panel-body">
 										<h4>Jonathan Smith</h4>
 										<div class="follow-ava">
-											<img src="<img src="<?php echo base_url(); ?>aset/img/follower-avatar.jpg" alt="">
+											<img src="<?php echo base_url(); ?>aset/img/follower-avatar.jpg" alt="">
 										</div>
 									</div>
 								</div>

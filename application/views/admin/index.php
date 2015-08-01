@@ -31,17 +31,107 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/animate.min.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/style.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/step.css" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.css" />	
+		<link href="<?php echo base_url(); ?>aset/font-awesome/css/font-awesome.css" rel="stylesheet" />
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
 			<script src="../bower_components/bootstrap/assets/js/respond.min.js"></script>
 		<![endif]-->
-		
-		
+	<script src="<?php echo base_url(); ?>aset/js/jquery.js"></script>		
+	<script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.js"></script>
+	<script src="<?php echo base_url(); ?>aset/js/loading.js"></script>
+	<script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
+	<script src="<?php echo base_url(); ?>aset/js/step.js"></script>
+	<script src="<?php echo base_url(); ?>aset/js/bootstrap-tooltip.js"></script>
+	
+	<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/main.js"></script> <!-- Resource jQuery -->
+	<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/modernizr.js"></script> <!-- Modernizr -->
+	
+	
+	<script type="text/javascript">
+		// <![CDATA[
+		$(document).ready(function () {
+			$(function () {
+				$( "#kode_surat_masuk" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({ 
+							url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
+							data: { kode: $("#kode_surat_masuk").val()},
+							dataType: "json",
+							type: "POST",
+							success: function(data){
+								response(data);
+							}    
+						});
+					},
+				});
+			});
+			
+			$(function () {
+				$( "#kode_surat" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({ 
+							url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
+							data: { kode: $("#kode_surat").val()},
+							dataType: "json",
+							type: "POST",
+							success: function(data){
+								response(data);
+							}    
+						});
+					},
+				});
+			});
+			
+			$(function () {
+				$( "#no_agenda" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({ 
+							url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
+							data: { kode: $("#kode_surat").val()},
+							dataType: "json",
+							type: "POST",
+							success: function(data){
+								response(data);
+							}    
+						});
+					},
+				});
+			});
+			
+			$(function () {
+				$( "#dari" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({ 
+							url: "<?php echo site_url('klasifikasi_surat/get_instansi_lain'); ?>",
+							data: { kode: $("#dari").val()},
+							dataType: "json",
+							type: "POST",
+							success: function(data){
+								response(data);
+							}    
+						});
+					},
+				});
+			});
+			
+			
+			$(function() {
+				$( "#tgl_surat" ).datepicker({
+					changeMonth: true,
+					changeYear: true,
+					dateFormat: 'yy-mm-dd'
+				});
+			});
+		});
+		// ]]>
+	</script>
 		
 	</head>
 	
-	<body style="">
+	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -143,98 +233,15 @@
 		</div>
 		
 	</body>
-	<script src="<?php echo base_url(); ?>aset/js/jquery.min.js"></script>
-	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.css" />
-	<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/main.js"></script> <!-- Resource jQuery -->
-	<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/modernizr.js"></script> <!-- Modernizr -->
-	<script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/loading.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/step.js"></script>
-	<script src="<?php echo base_url(); ?>aset/js/bootstrap-tooltip.js"></script>
 	<script src="<?php echo base_url(); ?>aset/js/owl.carousel.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>aset/js/count.js" type="text/javascript"></script>
-	<script src="<?php echo base_url(); ?>aset/js/all-chartjs.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>aset/js/jquery.nicescroll.js" type="text/javascript"></script>
-	<script src="<?php echo base_url(); ?>aset/js/common-scripts.js" type="text/javascript"></script>
-	<link href="<?php echo base_url(); ?>aset/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	
+	 <!--common script for all pages-->
+    <script src="<?php echo base_url(); ?>aset/js/common-scripts.js"></script>
 	<script type="text/javascript">
-		// <![CDATA[
-		$(document).ready(function () {
-			$(function () {
-				$( "#kode_surat_masuk" ).autocomplete({
-					source: function(request, response) {
-						$.ajax({ 
-							url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
-							data: { kode: $("#kode_surat_masuk").val()},
-							dataType: "json",
-							type: "POST",
-							success: function(data){
-								response(data);
-							}    
-						});
-					},
-				});
-			});
-			
-			$(function () {
-				$( "#kode_surat" ).autocomplete({
-					source: function(request, response) {
-						$.ajax({ 
-							url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
-							data: { kode: $("#kode_surat").val()},
-							dataType: "json",
-							type: "POST",
-							success: function(data){
-								response(data);
-							}    
-						});
-					},
-				});
-			});
-			
-			$(function () {
-				$( "#no_agenda" ).autocomplete({
-					source: function(request, response) {
-						$.ajax({ 
-							url: "<?php echo site_url('klasifikasi_surat/get_klasifikasi'); ?>",
-							data: { kode: $("#kode_surat").val()},
-							dataType: "json",
-							type: "POST",
-							success: function(data){
-								response(data);
-							}    
-						});
-					},
-				});
-			});
-			
-			$(function () {
-				$( "#dari" ).autocomplete({
-					source: function(request, response) {
-						$.ajax({ 
-							url: "<?php echo site_url('klasifikasi_surat/get_instansi_lain'); ?>",
-							data: { kode: $("#dari").val()},
-							dataType: "json",
-							type: "POST",
-							success: function(data){
-								response(data);
-							}    
-						});
-					},
-				});
-			});
-			
-			
-			$(function() {
-				$( "#tgl_surat" ).datepicker({
-					changeMonth: true,
-					changeYear: true,
-					dateFormat: 'yy-mm-dd'
-				});
-			});
+		$(document).ready(function(){
+			$(" #alert" ).fadeOut(3000);
 		});
-		// ]]>
 	</script>
 </html>

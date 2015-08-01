@@ -99,7 +99,7 @@ a{
 	display:none
 }
 
-.hasDatepicker{
+.hasDatepicker, .ui-datepicker-calendar,.navJudul{
 	z-index:-999;
 	
 }

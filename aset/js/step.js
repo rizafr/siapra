@@ -15,8 +15,11 @@ $(document).ready(function () {
     $(".next-step").click(function (e) {
 
         var $active = $('.wizard .nav-tabs li.active');
+        var $finished = $('.wizard .nav-tabs li.finished');
         $active.next().removeClass('disabled');
+        $active.prev().removeClass('finished');
         nextTab($active);
+        nextTab($finished);
 
     });
     $(".prev-step").click(function (e) {

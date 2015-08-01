@@ -24,7 +24,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 	$ket		= "";
 }
 ?>
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-inverse navJudul">
 	<div class="container z0">
 		<div class="navbar-header">
 			<span class="navbar-brand" href="#">Surat Keluar</span>

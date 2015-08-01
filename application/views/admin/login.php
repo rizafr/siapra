@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>.:: SIAPRA (Sistem Informasi Administrasi dan Penanganan Perkara) ::.</title>
@@ -32,13 +31,10 @@
 		<script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
 		<script src="../bower_components/bootstrap/assets/js/respond.min.js"></script>
 	<![endif]-->
-	
-	
-    <script src="<?php echo base_url(); ?>aset/js/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/jquery-1.8.3.min.js"></script>
+    <script src="<?php echo base_url(); ?>aset/js/bootstrap.js"></script>
     <script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
-    <script src="<?php echo base_url(); ?>aset/js/jquery.chained.js"></script>
-	<body style="">
+   <body style="">
 		<!--<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 			<div class="navbar-header">
@@ -113,11 +109,10 @@
 			
 			<script type="text/javascript">
 				$(document).ready(function(){
-					$(" #alert" ).fadeOut(6000);
+					$(" #alert" ).fadeOut(3000);
 				});
 			</script>
 			
 		</div>
 		
 	</body></html>
-	
