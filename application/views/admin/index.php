@@ -228,7 +228,7 @@
 					</div>
 				</div>
 				
-				<?php $this->load->view('admin/'.$page); ?>
+				<?php $this->load->view('admin/'.$page); ?>	
 				
 			</div>
 		</div>

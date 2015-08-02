@@ -1,7 +1,7 @@
 
 
 a{
-	 -webkit-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
@@ -14,8 +14,8 @@ a{
 	
 }
 .judul{
-		
-		margin:0 auto;
+	
+	margin:0 auto;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
@@ -23,7 +23,7 @@ a{
     background-color: #777777;
 }
 
-	
+
 .btn-primary {
     color: #FFF;
     background-color: #00A3D9;
@@ -92,7 +92,7 @@ a{
 	left:0;
 	z-index:999999;
 	opacity: 0.4,
-	 transition:  1s ease-in-out;
+	transition:  1s ease-in-out;
     -moz-transition:  1s ease-in-out; /* FF 4 */
     -webkit-transition:  1s ease-in-out; /* Safari & Chrome */
     -o-transition:  1s ease-in-out; /* Opera */
@@ -108,10 +108,10 @@ a{
 }
 
 /*
-Template Name: Flat Lab Dashboard build with Bootstrap v3.0.2
-Template Version: 1.2.0
-Author: Mosaddek Hossain
-Website: http://thevectorlab.net/
+	Template Name: Flat Lab Dashboard build with Bootstrap v3.0.2
+	Template Version: 1.2.0
+	Author: Mosaddek Hossain
+	Website: http://thevectorlab.net/
 */
 
 
@@ -124,7 +124,7 @@ a, a:hover, a:focus {
     outline: none;
 }
 ::selection {
-
+	
     background: #FF6C60;
     color: #fff;
 }
@@ -393,7 +393,7 @@ ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:fo
     display: block;
     border-radius: 4px;
     -webkit-border-radius: 4px;
-
+	
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -524,8 +524,8 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     /* Safari and Chrome */
     .dropdown-menu.extended  {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.176) !important;
-    };
-    }
+	};
+}
 
 .dropdown-menu.extended li p {
     background-color: #F1F2F7;
@@ -623,7 +623,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 .top-nav ul.top-menu > li .dropdown-menu.logout {
     width: 268px !important;
-
+	
 }
 
 .top-nav li.dropdown .dropdown-menu {
@@ -702,7 +702,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .top-nav ul.top-menu > li > a:hover, .top-nav ul.top-menu > li > a:focus {
     border:1px solid #F1F2F7;
     background: #F1F2F7;
-
+	
 }
 
 .top-nav .dropdown-menu.extended.logout {
@@ -829,7 +829,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 .state-overview .value  {
     float: right;
-
+	
 }
 
 .state-overview .value h1, .state-overview .value p  {
@@ -1003,7 +1003,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .chart-tittle .title {
-
+	
 }
 
 .panel.green-chart .chart-tittle .value {
@@ -1487,8 +1487,8 @@ h3.timeline-title {
     /* Safari and Chrome */
     .panel-footer.revenue-foot {
         margin-bottom: -4px;
-    };
-    }
+	};
+}
 
 
 .panel-footer.revenue-foot ul  {
@@ -1512,7 +1512,7 @@ h3.timeline-title {
     -webkit-border-radius: 0px 0px 4px 0px;
     border-radius: 0px 0px 4px 0px;
     border-right: none;
-
+	
 }
 
 .panel-footer.revenue-foot ul li a{
@@ -1616,7 +1616,7 @@ ul.ft-link li a i {
     position: absolute;
     top: 70px;
     width: 100%;
-
+	
 }
 
 .owl-prev, .owl-next {
@@ -1695,7 +1695,7 @@ ul.ft-link li a i {
     position: absolute;
     width: 0;
     right: -5px;
-
+	
 }
 
 .post-highlight.yellow {
@@ -1749,7 +1749,7 @@ ul.ft-link li a i {
 }
 
 .post-btn {
-
+	
 }
 
 .post-btn a {
@@ -1777,7 +1777,7 @@ ul.ft-link li a i {
     height: 112px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
-
+	
 }
 
 .v-align {
@@ -1941,7 +1941,7 @@ ul.ft-link li a i {
 }
 
 .weather-category ul li a {
-
+	
 }
 
 .weather-category ul li:last-child  {
@@ -2830,7 +2830,7 @@ ul.amounts li {
     margin-right: 15px;
     margin-top: -5px;
     margin-bottom: 15px;
-
+	
 }
 
 .dataTable tr:last-child {
@@ -4108,7 +4108,7 @@ span.customSelect.changed {
 {
     width: 100%;
     margin: 10px auto 0;
-
+	
 }
 
 
@@ -4715,13 +4715,17 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
 }
 
 .go-top {
-    margin-right: 1%;
-    float: right;
-    background: rgba(255,255,255,.5);
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
+	position: fixed;     
+	bottom: 45px;     
+	right: 25px;     
+	padding: 0;     
+	margin: 0;
+	float: right;
+	background: rgba(255,255,255,.5);
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
 }
 
 .go-top i {
