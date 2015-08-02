@@ -26,6 +26,7 @@
 			
 		</style>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap.css" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap.min" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap-reset.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/owl.carousel.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/animate.css" media="screen">
@@ -33,6 +34,8 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/step.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.css" />	
 		<link href="<?php echo base_url(); ?>aset/font-awesome/css/font-awesome.css" rel="stylesheet" />
+		<link href="<?php echo base_url(); ?>aset/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
+		<link href="<?php echo base_url(); ?>aset/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
@@ -245,6 +248,22 @@
 	<script src="<?php echo base_url(); ?>aset/js/exporting.js" type="text/javascript"></script>
 	
 	<!--common script for all pages-->
+	
+	<!--script for this page only-->
+
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$('#example').dataTable( {
+					"aaSorting": [[ 6, "desc" ]]
+				} );
+			} );
+		</script>
+
+<!--main content end-->
+
+
+<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/DT_bootstrap.js"></script>
     
 	<script type="text/javascript">
 		$(document).ready(function(){
