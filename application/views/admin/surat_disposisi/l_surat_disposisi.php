@@ -22,7 +22,7 @@
 <div class="alert alert-info">Perihal Surat</b> : <i><?php echo $judul_surat; ?></i></div>
 	<div class="adv-table">		
 		<section id="unseen">
-			<table  class="display table table-bordered table-striped table-condensed" id="example">
+			<table class="display table table-bordered table-striped table-condensed table-hover" id="example">
 				<thead>
 					<tr>
 						<th width="5%">No</th>

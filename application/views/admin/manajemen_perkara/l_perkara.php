@@ -34,7 +34,7 @@
 	-->
 	<div class="adv-table">		
 		<section id="unseen">
-			<table  class="display table table-bordered table-striped table-condensed" id="example">
+			<table  class="display table table-bordered table-striped table-condensed table-hover" id="example">
 				<thead>
 					<tr>
 						<th width="10%">No. Agenda</th>

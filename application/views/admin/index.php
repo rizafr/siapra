@@ -30,8 +30,8 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/owl.carousel.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/animate.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/style.css" media="screen">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/js/jquery/jquery-ui-1.10.1.custom.css" />	
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/step.css" media="screen">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.css" />	
 		<link href="<?php echo base_url(); ?>aset/font-awesome/css/font-awesome.css" rel="stylesheet" />
 		<link href="<?php echo base_url(); ?>aset/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
 		<link href="<?php echo base_url(); ?>aset/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
@@ -42,8 +42,9 @@
 		<![endif]-->
 		<script src="<?php echo base_url(); ?>aset/js/jquery.js"></script>		
 		<script src="<?php echo base_url(); ?>aset/js/jquery-1.11.1.min.js"></script>		
+		<script src="<?php echo base_url(); ?>aset/js/jquery.nicescroll.js" type="text/javascript"></script>
 		<script src="<?php echo base_url(); ?>aset/js/bootstrap.min.js"></script>
-		<script src="<?php echo base_url(); ?>aset/js/jquery/jquery-ui.js"></script>
+		<script src="<?php echo base_url(); ?>aset/js/jquery/jquery-ui-1.9.2.custom.min.js"></script>
 		<script src="<?php echo base_url(); ?>aset/js/loading.js"></script>
 		<script src="<?php echo base_url(); ?>aset/js/bootswatch.js"></script>
 		<script src="<?php echo base_url(); ?>aset/js/step.js"></script>
@@ -51,6 +52,7 @@
 		<script src="<?php echo base_url() ?>aset/js/wow.min.js"></script>
 		<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/main.js"></script> <!-- Resource jQuery -->
 		<script src="<?php echo base_url(); ?>aset/css/vertical-timeline/js/modernizr.js"></script> <!-- Modernizr -->
+		
 		
 		
 		<script type="text/javascript">
@@ -240,9 +242,11 @@
 		</div>
 		
 	</body>
+	<script src="<?php echo base_url(); ?>aset/js/common-scripts.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>aset/js/jquery.dcjqaccordion.2.7.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>aset/js/owl.carousel.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>aset/js/count.js" type="text/javascript"></script>
-	<script src="<?php echo base_url(); ?>aset/js/jquery.nicescroll.js" type="text/javascript"></script>
+	
 	<script src="<?php echo base_url(); ?>aset/js/highcharts.js" type="text/javascript"></script>
 	<script src="<?php echo base_url(); ?>aset/js/exporting.js" type="text/javascript"></script>
 	

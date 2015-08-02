@@ -3231,12 +3231,12 @@ table.sliders tr td {
     top: -0.57em   !important;
 }
 
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+/* .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
     background: #fff !important;
     border: 3px solid #22bacf !important;
     border-radius: 50% !important;
     -webkit-border-radius: 50% !important;
-}
+} */
 
 .ui-slider-vertical {
     width: 8px !important;

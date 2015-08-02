@@ -8,7 +8,10 @@
 <script>
 	// A $( document ).ready() block.
 	$( document ).ready(function() {
-	var text= "Ada 5 proses perkara yang akan disidangkan hari ini.";
+	var text= 
+	"Ada 5 proses perkara yang akan disidangkan hari ini. "+
+	"\n Ada 5 proses penahanan yang masuk hari ini. "+
+	"\n Ada 5 surat masuk yang belum diproses hari ini. ";
 	
 		swal({
 			title: "Perhatian!",
