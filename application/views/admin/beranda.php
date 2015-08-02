@@ -723,3 +723,4 @@
 		});
 	});
 </script>
+<?php $this->load->view('admin/notifikasi/notifikasi'); ?>

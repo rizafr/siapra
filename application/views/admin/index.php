@@ -26,7 +26,6 @@
 			
 		</style>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap.css" media="screen">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap.min" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/bootstrap-reset.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/owl.carousel.css" media="screen">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>aset/css/animate.css" media="screen">
