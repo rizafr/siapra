@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2015 at 02:36 PM
+-- Generation Time: Aug 02, 2015 at 10:09 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -351,8 +351,8 @@ CREATE TABLE IF NOT EXISTS `surat_masuk` (
 --
 
 INSERT INTO `surat_masuk` (`id_surat_masuk`, `kode_surat_masuk`, `no_surat_masuk`, `asal_surat_masuk`, `tgl_surat_masuk`, `status_surat_masuk`, `perihal_surat_masuk`, `index_surat_masuk`, `no_agenda`, `lampiran`, `tgl_diterima`, `pengolah`, `keterangan`, `status_disposisi`) VALUES
-(1, 'KU.00.1', 'kdkdkdk', 'Polisi Selawi', '2015-07-01', 'Penting', 'Korupsi', 'DAERAH', '0001', 'laptop.png', '2015-07-30', 1, '-', 1),
-(2, 'KU.00.1', 'kdkdkdk', 'Polisi Selawi', '2015-07-01', 'Penting', 'Khasanah dunia Pencopetan', 'DAERAH', '0002', 'laptop.png', '2015-07-30', 1, '-', 1);
+(1, 'KU.02.2', 'kdkdkdk', 'Polisi Selawi', '2015-07-31', 'Penting', 'Korupsi', 'DAERAH', '0001', 'laptop.png', '2015-07-30', 1, '-', 1),
+(2, 'KU.00.1', 'kdkdkdk', 'Polisi Selawi', '2015-08-17', 'Biasa', 'Khasanah dunia Pencopetan', 'DAERAH', '0002', 'laptop.png', '2015-07-30', 1, '-', 1);
 
 -- --------------------------------------------------------
 
@@ -375,7 +375,7 @@ CREATE TABLE IF NOT EXISTS `t_admin` (
 --
 
 INSERT INTO `t_admin` (`id`, `username`, `password`, `nama`, `nip`, `level`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', '19900326 201401 1 002', 'Super Admin'),
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Riza Fauzi R', '19900326 201401 1 002', 'Super Admin'),
 (2, 'umum', 'adfab9c56b8b16d6c067f8d3cff8818e', 'Nur Akhwan', '19900326 201401 1 002', 'Admin'),
 (3, 'admin1', 'e00cf25ad42683b3df678c61f42c6bda', 'Administrator 1', '199003262017011001', 'Admin');
 
