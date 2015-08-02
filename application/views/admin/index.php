@@ -201,7 +201,7 @@
 							<ul class="dropdown-menu" aria-labelledby="themes">
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>pengaturan/passwod">Ubah Password</a></li>
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>logins/logout">Logout</a></li>
-								<li><a tabindex="-1" href="#" target="_blank">Help</a></li>
+								<li><a tabindex="-1"  data-toggle="modal" href="#help">Help</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -209,7 +209,7 @@
 				</div>
 			</div>
 		</div>
-		
+		<?php $this->load->view('admin/help/help'); ?>
 		<?php 
 			$q_instansi	= $this->db->query("SELECT * FROM tr_instansi LIMIT 1")->row();
 			echo $this->session->userdata('admin_level');
@@ -228,7 +228,9 @@
 					</div>
 				</div>
 				
+				<!-- DINAMIC CONTENT PAGE-->				
 				<?php $this->load->view('admin/'.$page); ?>	
+				<!-- END DINAMIC CONTENT PAGE-->				
 				
 			</div>
 		</div>
