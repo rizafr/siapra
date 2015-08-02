@@ -100,7 +100,7 @@ class Surat_masuk extends CI_Controller {
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id_surat_masuk=\"alert\">Data berhasil diubah. ".$this->upload->display_errors()."</div>");			
 			redirect('surat_masuk/masuk');
 		} else {
-			$a['data']		= $this->db->query("SELECT * FROM surat_masuk order by tgl_diterima desc LIMIT $awal, $akhir ")->result();
+			$a['data']		= $this->db->query("SELECT * FROM surat_masuk order by tgl_surat_masuk DESC  LIMIT $awal, $akhir ")->result();
 			$a['page']		= "surat_masuk/l_surat_masuk";
 		}
 		

@@ -313,7 +313,7 @@ body {
   line-height: 1.428571429;
   color: #333333;
   background-color: #ffffff;
-  background: url(../img/bg.png);
+  background: #ccc url(../img/banner.png) repeat fixed 0% 0%; 
 }
 
 input,
@@ -557,7 +557,7 @@ h4 small,
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eeeeee;
+  /* border-bottom: 1px solid #eeeeee; */
 }
 
 ul,

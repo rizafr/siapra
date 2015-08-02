@@ -57,32 +57,32 @@
 											<div class="panel-body">
 												<form role="form">
 													<div class="form-group">
-													  <label class="col-sm-2 control-label">Tanggal</label>
-													  <div class="col-sm-10">
-														  <input type="text" placeholder="" data-mask="99/99/9999" class="form-control">
-														  <span class="help-inline">dd/mm/yyyy</span>
-													  </div>
+														<label class="col-sm-2 control-label">Tanggal</label>
+														<div class="col-sm-10">
+															<input type="text" placeholder="" data-mask="99/99/9999" class="form-control">
+															<span class="help-inline">dd/mm/yyyy</span>
+														</div>
 													</div>
 													<div class="form-group">
-													  <label class="col-sm-2 control-label">Tersangka</label>
-													  <div class="col-sm-10">
-														  <input type="text" placeholder=""  class="form-control">
-														 
-													  </div>
+														<label class="col-sm-2 control-label">Tersangka</label>
+														<div class="col-sm-10">
+															<input type="text" placeholder=""  class="form-control">
+															
+														</div>
 													</div>
 													<div class="form-group">
-													  <label class="col-sm-2 control-label">Perkara</label>
-													  <div class="col-sm-10">
-														  <input type="text" placeholder=""  class="form-control">
-														 
-													  </div>
+														<label class="col-sm-2 control-label">Perkara</label>
+														<div class="col-sm-10">
+															<input type="text" placeholder=""  class="form-control">
+															
+														</div>
 													</div>
 													<div class="form-group">
-													  <label class="col-sm-2 control-label">Jaksa</label>
-													  <div class="col-sm-10">
-														  <input type="text" placeholder=""  class="form-control">
-														 
-													  </div>
+														<label class="col-sm-2 control-label">Jaksa</label>
+														<div class="col-sm-10">
+															<input type="text" placeholder=""  class="form-control">
+															
+														</div>
 													</div>
 													<button type="submit" class="btn btn-info">Submit</button>
 												</form>
@@ -123,3 +123,4 @@
 			</section>
 		</div>
 	</div>	
+</div>	

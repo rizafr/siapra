@@ -253,7 +253,7 @@
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
 				$('#example').dataTable( {
-					"aaSorting": [[ 6, "desc" ]]
+					"aaSorting": [[ 1, "asc" ]]
 				} );
 			} );
 		</script>
