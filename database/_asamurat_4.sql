@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2015 at 10:09 AM
+-- Generation Time: Aug 07, 2015 at 03:32 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -87,15 +87,35 @@ CREATE TABLE IF NOT EXISTS `perkara` (
   `perkara` varchar(100) NOT NULL,
   `id_jaksa` int(11) NOT NULL,
   PRIMARY KEY (`id_perkara`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `perkara`
 --
 
 INSERT INTO `perkara` (`id_perkara`, `no_agenda`, `tanggal_perkara`, `nama_tersangka`, `perkara`, `id_jaksa`) VALUES
-(1, '0001', '2011-08-31', 'Muslihat saja', 'Preman Pensiun 2 z', 2),
-(3, '0002', '2015-08-01', 'Dikdik', 'Khasanah Dunia PencopetanKhasanah Dunia PencopetanKhasanah Dunia Pencopetan', 1);
+(1, '0001', '2011-08-31', 'Muslihat saja', 'Preman Pensiun 2', 2),
+(3, '0002', '2007-02-08', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(4, '0003', '2007-02-08', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(6, '001', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 2', 2),
+(7, '002', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(8, '003', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(9, '004', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 3', 1),
+(10, '005', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
+(11, '006', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(12, '007', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 4', 1),
+(13, '008', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
+(14, '009', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(15, '010', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 5', 1),
+(16, '011', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
+(17, '012', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(18, '013', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 6', 2),
+(19, '014', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(20, '015', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(21, '016', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 7', 2),
+(22, '017', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(23, '018', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
+(24, '019', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 8', 1);
 
 -- --------------------------------------------------------
 
