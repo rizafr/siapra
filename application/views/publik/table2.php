@@ -5,11 +5,7 @@
 	<title>.:: SIAPRA (Sistem Informasi Administrasi dan Penanganan Perkara) ::.</title>
     <meta charset="UTF-8">
 	<link rel="icon" href="">
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">    
-	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/sidang/bootstrap.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/sidang/frontend.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/sidang/font-awesome.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/sidang/hover-min.css">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">  
 	<script src="<?php echo base_url(); ?>aset/js/jquery.js"></script>		
 	<script src="<?php echo base_url(); ?>aset/js/jquery-1.11.1.min.js"></script>		
 	<script type="text/javascript">
@@ -100,7 +96,7 @@
 								<td><?php echo $b->nama_tersangka; ?></td>
 								<td><?php echo $b->perkara?></td>
 								<td><font color='blue'><?php echo $b->nama_jaksa?></font></td>
-								<td><font color='red'>SEDANG BERLANGSUNG</font></td>
+								<td><small class="label label-danger">SEDANG BERLANGSUNG</small></td>
 							</tr>
 							<?php 
 								

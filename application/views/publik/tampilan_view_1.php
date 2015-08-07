@@ -9,9 +9,8 @@
 	<link rel="icon" href="">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">    
 	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/sidang/bootstrap.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/sidang/frontend.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/sidang/style.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/sidang/font-awesome.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>aset/sidang/hover-min.css">
 	<script src="<?php echo base_url(); ?>aset/sidang/jquery.js"></script>		
 	<script src="<?php echo base_url(); ?>aset/sidang/jquery-1.11.3.min.js"></script>		
 	
@@ -139,7 +138,7 @@
 		<div class="col-md-12">
 			<div class="navbar-header">
 				<a href="#" class="navbar-brand visible-lg visible-md center">
-					<strong></strong> .:: SIAPRA ::. <?php echo $q_instansi->nama; ?>
+					<strong></strong> .:: SIAPRA ::. <br /><?php echo $q_instansi->nama; ?>
 				</a>
 				<a href="<?php echo base_url(); ?>admin/homes" class="navbar-brand visible-sm">
 				</a>
@@ -164,7 +163,7 @@
 			<img src="<?php echo base_url(); ?>aset/sidang/loader2.gif" id="loading" alt="loading" style="display:none;" />
 			<div style="width: 800px; margin: 0 auto; text-align:center">
 				<div class="well well-sm wow fadeInDown">
-							<h3>SELAMAT DATANG</h3>
+							<h3>.:: SELAMAT DATANG ::.</h3>
 							<h4>DAFTAR SIDANG HARI INI </h4>
 						</div>
 					</div>					
