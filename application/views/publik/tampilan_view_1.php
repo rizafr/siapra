@@ -165,6 +165,7 @@
 				<div class="well well-sm wow fadeInDown">
 							<h3>.:: SELAMAT DATANG ::.</h3>
 							<h4>DAFTAR SIDANG HARI INI </h4>
+							<h4><?php echo $tanggal . " " . $bulan . " " . $tahun; ?></h4>
 						</div>
 					</div>					
 			<div id="content">
