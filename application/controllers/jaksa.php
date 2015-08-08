@@ -42,23 +42,23 @@ class Jaksa extends CI_Controller {
 			redirect('jaksa/olah_jaksa');
 		} else if ($act == "cari") {
 			$a['data']		= $this->db->query("SELECT * FROM jaksa WHERE nip LIKE '%$cari%' OR nama_jaksa LIKE '%$cari%' ORDER BY id DESC")->result();
-			$a['page']		= "olah_jaksa/l_jaksa";
+			$a['page']		= "jaksa/l_jaksa";
 		} else if ($act == "add") {
-			$a['page']		= "olah_jaksa/f_jaksa";
+			$a['page']		= "jaksa/f_jaksa";
 		} else if ($act == "edt") {
 			$a['datpil']	= $this->db->query("SELECT * FROM jaksa WHERE id_jaksa = '$idu'")->row();	
-			$a['page']		= "olah_jaksa/f_jaksa";
+			$a['page']		= "jaksa/f_jaksa";
 		} else if ($act == "act_add") {	
 			$this->db->query("INSERT INTO jaksa VALUES (NULL, '$nip', '$nama_jaksa')");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id_surat_masuk=\"alert\">Data berhasil ditambahkan. ".$this->upload->display_errors()."</div>");
-			redirect('jaksa/olah_jaksa');
+			redirect('jaksa/jaksa');
 		} else if ($act == "act_edt") {
 			$this->db->query("UPDATE jaksa SET nip = '$nip', nama_jaksa = '$nama_jaksa' WHERE id_jaksa = '$id_jaksa'");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id_surat_masuk=\"alert\">Data berhasil diubah. ".$this->upload->display_errors()."</div>");			
 			redirect('jaksa/olah_jaksa');
 		} else {
 			$a['data']		= $this->db->query("SELECT * FROM jaksa order by nip DESC  LIMIT $awal, $akhir ")->result();
-			$a['page']		= "olah_jaksa/l_jaksa";
+			$a['page']		= "jaksa/l_jaksa";
 		}
 		
 		$this->load->view('admin/index', $a);
