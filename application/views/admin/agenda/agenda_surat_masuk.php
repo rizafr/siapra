@@ -33,11 +33,11 @@
 	h3 { margin-bottom: -17px }
 	h2 { margin-bottom: 0px }
 </style>
-<title>Cetak Agenda Surat Masuk</title>
+<title>Cetak Laporan Surat Masuk</title>
 </head>
 
 <body onload="window.print()">
-	<center><b style="font-size: 20px">AGENDA SURAT MASUK</b><br>
+	<center><b style="font-size: 20px">LAPORAN SURAT MASUK</b><br>
 	Dari tanggal <b><?php echo tgl_jam_sql($tgl_start)."</b> sampai dengan tanggal <b>".tgl_jam_sql($tgl_end)."</b>"; ?>
 	</center><br>
 	
@@ -45,9 +45,9 @@
 		<thead>
 			<tr>
 				<th width="3%">No</td>
-				<th width="5%">Kode Klas</td>
+				<th width="5%">Kode Surat</td>
 				<th width="28%">Isi Ringkas</td>
-				<th width="18%">Dari</td>
+				<th width="18%">Asal Surat</td>
 				<th width="17%">Nomor Surat</td>
 				<th width="7%">Tgl. Surat</td>
 				<th width="10%">Pengolah</td>
@@ -64,11 +64,11 @@
 			?>
 			<tr>
 				<td><?php echo $no; ?></td>
-				<td><?php echo $d->kode; ?></td>
-				<td><?php echo $d->isi_ringkas; ?></td>
-				<td><?php echo $d->dari; ?></td>
-				<td><?php echo $d->no_surat; ?></td>
-				<td><?php echo tgl_jam_sql($d->tgl_surat); ?></td>
+				<td><?php echo $d->kode_surat_masuk; ?></td>
+				<td><?php echo $d->perihal_surat_masuk; ?></td>
+				<td><?php echo $d->asal_surat_masuk; ?></td>
+				<td><?php echo $d->no_surat_masuk; ?></td>
+				<td><?php echo tgl_jam_sql($d->tgl_surat_masuk); ?></td>
 				<td><?php echo gval("t_admin", "id", "nama", $d->pengolah); ?></td>
 				<td><?php echo tgl_jam_sql($d->tgl_diterima); ?></td>
 				<td><?php echo $d->keterangan; ?></td>
@@ -76,7 +76,7 @@
 			<?php 
 				}
 			} else {
-				echo "<tr><td style='text-align: center'>Tidak ada data</td></tr>";
+				echo "<tr><td colspan='9' style='text-align: center'>Tidak ada data</td></tr>";
 			}
 			?>
 		</tbody>

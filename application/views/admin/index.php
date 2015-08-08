@@ -177,7 +177,7 @@
 							<ul class="dropdown-menu" aria-labelledby="themes">
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>agenda/agenda_surat_masuk"> Surat Masuk</a></li>
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>agenda/agenda_surat_keluar"> Surat Keluar</a></li>
-								<li><a tabindex="-1" href="#" onclick="alert('coming soon')">Lap. Jaksa</a></li>
+								<li><a tabindex="-1" href="<?php echo base_url(); ?>agenda/agenda_jaksa">Data Jaksa</a></li>
 							</ul>
 						</li>
 						

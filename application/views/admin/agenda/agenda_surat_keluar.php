@@ -33,11 +33,11 @@
 	h3 { margin-bottom: -17px }
 	h2 { margin-bottom: 0px }
 </style>
-<title>Cetak Agenda Surat Keluar</title>
+<title>Cetak Laporan Surat Keluar</title>
 </head>
 
 <body onload="window.print()">
-	<center><b style="font-size: 20px">AGENDA SURAT KELUAR</b><br>
+	<center><b style="font-size: 20px">LAPORAN SURAT KELUAR</b><br>
 	Dari tanggal <b><?php echo tgl_jam_sql($tgl_start)."</b> sampai dengan tanggal <b>".tgl_jam_sql($tgl_end)."</b>"; ?>
 	</center><br>
 	
