@@ -39,10 +39,10 @@ class Jaksa extends CI_Controller {
 		if ($act == "del") {
 			$this->db->query("DELETE FROM jaksa WHERE id_jaksa = '$idu'");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil dihapus </div>");
-			redirect('jaksa/olah_jaksa');
+			redirect('jaksa/olah_jaksa'); //redirect ke nama controller / nama fungsi
 		} else if ($act == "cari") {
 			$a['data']		= $this->db->query("SELECT * FROM jaksa WHERE nip LIKE '%$cari%' OR nama_jaksa LIKE '%$cari%' ORDER BY id DESC")->result();
-			$a['page']		= "jaksa/l_jaksa";
+			$a['page']		= "jaksa/l_jaksa"; //halaman nya berisi namafolder/namafilephp
 		} else if ($act == "add") {
 			$a['page']		= "jaksa/f_jaksa";
 		} else if ($act == "edt") {
