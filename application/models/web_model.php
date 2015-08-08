@@ -37,7 +37,7 @@ class Web_model extends CI_Model {
 	}
 	
 	//qhususon...
-	 #memilih jaksa
+	#memilih jaksa
     function get_dropdown_list() {
         $this->db->from('jaksa');
         $this->db->order_by('nama_jaksa', 'asc');
@@ -51,6 +51,8 @@ class Web_model extends CI_Model {
         }
         return $return;
     }
+	
+	
 	
 	//berita
 	function getBeritaAll() {
