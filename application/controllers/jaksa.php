@@ -39,10 +39,10 @@ class Jaksa extends CI_Controller {
 		if ($act == "del") {
 			$this->db->query("DELETE FROM jaksa WHERE id_jaksa = '$idu'");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil dihapus </div>");
-			redirect('jaksa/olah_jaksa');
+			redirect('jaksa/olah_jaksa'); //redirect ke nama controller / nama fungsi
 		} else if ($act == "cari") {
 			$a['data']		= $this->db->query("SELECT * FROM jaksa WHERE nip LIKE '%$cari%' OR nama_jaksa LIKE '%$cari%' ORDER BY id DESC")->result();
-			$a['page']		= "jaksa/l_jaksa";
+			$a['page']		= "jaksa/l_jaksa"; //halaman nya berisi namafolder/namafilephp
 		} else if ($act == "add") {
 			$a['page']		= "jaksa/f_jaksa";
 		} else if ($act == "edt") {
@@ -51,7 +51,7 @@ class Jaksa extends CI_Controller {
 		} else if ($act == "act_add") {	
 			$this->db->query("INSERT INTO jaksa VALUES (NULL, '$nip', '$nama_jaksa')");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id_surat_masuk=\"alert\">Data berhasil ditambahkan. ".$this->upload->display_errors()."</div>");
-			redirect('jaksa/jaksa');
+			redirect('jaksa/olah_jaksa');
 		} else if ($act == "act_edt") {
 			$this->db->query("UPDATE jaksa SET nip = '$nip', nama_jaksa = '$nama_jaksa' WHERE id_jaksa = '$id_jaksa'");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id_surat_masuk=\"alert\">Data berhasil diubah. ".$this->upload->display_errors()."</div>");			
