@@ -155,6 +155,7 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-th-list icon-white"> </i> Referensi <span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>klasifikasi_surat/klas_surat">Klasifikasi Surat</a></li>
+								<li><a tabindex="-1" href="<?php echo base_url(); ?>jaksa/olah_jaksa">Jaksa</a></li>
 							</ul>
 						</li>
 						
