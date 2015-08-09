@@ -478,7 +478,7 @@ a.logo span {
 .notify-row {
     float: left;
     margin-top: 15px;
-    margin-left: 92px;
+    /* margin-left: 92px; */
 }
 
 ul.top-menu > li > a {
@@ -564,7 +564,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .dropdown-menu.extended li a:hover {
-    background-color: #F7F8F9 !important;
+    background-color: #777777 !important;
     color: #2E2E2E;
 }
 
