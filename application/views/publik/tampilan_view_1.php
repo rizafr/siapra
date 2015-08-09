@@ -129,8 +129,8 @@
 	</script>
 	
 	<?php 
-			$q_instansi	= $this->db->query("SELECT * FROM tr_instansi LIMIT 1")->row();
-		?>
+		$q_instansi	= $this->db->query("SELECT * FROM tr_instansi LIMIT 1")->row();
+	?>
 </head>
 <body onload="setInterval('displayServerTime()', 1000);">
 	<div style="display: none;" class="se-pre-con"></div>
@@ -143,7 +143,7 @@
 				<a href="<?php echo base_url(); ?>admin/homes" class="navbar-brand visible-sm">
 				</a>
 				<a href="<?php echo base_url(); ?>admin/homes" class="navbar-brand visible-xs">
-					<small><strong>·SIAPRA</strong></small>
+					<small><strong>.:: SIAPRA ::.</strong></small>
 				</a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
 					<i class="glyphicon glyphicon-search"></i>
@@ -151,7 +151,12 @@
 			</div>
 			<div class="collapse navbar-collapse" id="navbar-collapse1">
 				<ul class="nav pull-right">
-					<div class="jam"><?php echo $hari . "," . " " . $tanggal . " " . $bulan . " " . $tahun; ?><div id="clock"> <?php print date('H:i:s'); ?></div> </div>
+					<div class="jam">
+						<?php echo $hari . "," . " " . $tanggal . " " . $bulan . " " . $tahun." | "; ?>
+						<i id="clock"> <?php print  date('H:i:s'); ?></i> 
+					</div>
+						<a href="<?php echo base_url() ?>logins"><button class="btn btn-info btn-xs"  id="themes"><i class="icon-user icon-white"></i> Login </button></a>
+					 
 				</ul>
 			</div>
 		</div>
@@ -163,54 +168,55 @@
 			<img src="<?php echo base_url(); ?>aset/sidang/loader2.gif" id="loading" alt="loading" style="display:none;" />
 			<div style="width: 800px; margin: 0 auto; text-align:center">
 				<div class="well well-sm wow fadeInDown">
-							<h3>.:: SELAMAT DATANG ::.</h3>
-							<h4>DAFTAR SIDANG HARI INI </h4>
-							<h4><?php echo $tanggal . " " . $bulan . " " . $tahun; ?></h4>
-						</div>
-					</div>					
-			<div id="content">
-			</div>
-		</div>
-		
-	</div>
-	
-	<!--<script src="<?php echo base_url(); ?>aset/sidang/jquery.js"></script>-->
-	<script>
-		/* Preloader */
-		//paste this code under head tag or in a seperate js file.
-		// Wait for window load
-		$(window).load(function () {
-			// Animate loader off screen
-			$(".se-pre-con").fadeOut("slow");
-			$('.row-item').fadeIn("slow");
-		});
-		
-		function calcHeight()
-		{
-			//find the height of the internal page
-			var the_height =
-			document.getElementById('the_iframe').contentWindow.
-			document.body.scrollHeight;
-			
-			//change the height of the iframe
-			document.getElementById('the_iframe').height =
-			the_height;
-		}
-		
-		
-		/* jQuery toggle layout */
-		$('#btnToggle').click(function () {
-			if ($(this).hasClass('on')) {
+					<h3>.:: SELAMAT DATANG ::.</h3>
+				<h4>DAFTAR SIDANG HARI INI </h4>
+				<h4><?php echo $tanggal . " " . $bulan . " " . $tahun; ?></h4>
+				</div>
+				</div>					
+				<div id="content">
+				</div>
+				</div>
+				
+				</div>
+				
+				<!--<script src="<?php echo base_url(); ?>aset/sidang/jquery.js"></script>-->
+				<script>
+				/* Preloader */
+				//paste this code under head tag or in a seperate js file.
+				// Wait for window load
+				$(window).load(function () {
+				// Animate loader off screen
+				$(".se-pre-con").fadeOut("slow");
+				$('.row-item').fadeIn("slow");
+				});
+				
+				function calcHeight()
+				{
+				//find the height of the internal page
+				var the_height =
+				document.getElementById('the_iframe').contentWindow.
+				document.body.scrollHeight;
+				
+				//change the height of the iframe
+				document.getElementById('the_iframe').height =
+				the_height;
+				}
+				
+				
+				/* jQuery toggle layout */
+				$('#btnToggle').click(function () {
+				if ($(this).hasClass('on')) {
 				$('#main .col-md-6').addClass('col-md-4').removeClass('col-md-6');
 				$(this).removeClass('on');
-			}
-			else {
+				}
+				else {
 				$('#main .col-md-4').addClass('col-md-6').removeClass('col-md-4');
 				$(this).addClass('on');
-			}
-		});
-	</script>
-	
-	
-</body>
-</html>
+				}
+				});
+				</script>
+				
+				
+				</body>
+				</html>
+								

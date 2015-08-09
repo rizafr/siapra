@@ -7,7 +7,12 @@ a{
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+	color: white;
 	
+}
+a:hover{
+	color : white;
+	background: none !important;
 }
 
 .navbar-inverse {
