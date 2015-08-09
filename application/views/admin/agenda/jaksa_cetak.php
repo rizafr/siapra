@@ -26,14 +26,14 @@ header('Content-Disposition: attachment; filename="' . basename($file_name) . '"
 ?>
 
 <html>
-    <title><b> DATA JAKSA <?php echo $data['nama_jaksa'] ?> <?php echo tgl_jam_sql($tgl_start)."</b> sampai dengan tanggal <b>".tgl_jam_sql($tgl_end)."</b>";?></title>
+    <title><b> DATA JAKSA <?php echo $nama['nama_jaksa']." NIP. ".$nama['nip']; ?><br/> <?php echo tgl_jam_sql($tgl_start)."</b> sampai dengan tanggal <b>".tgl_jam_sql($tgl_end)."</b>";?></title>
     <head> 
         <meta charset="utf-8">
         <link href="<?php echo base_url(); ?>assets/admin/css/print.css" rel="stylesheet" />
         <link href="<?php echo base_url(); ?>assets/admin/css/bootstrap.css" rel="stylesheet" />
     </head>
     <body onload="window.print()">
-		<h3><b> DATA JAKSA <?php echo $data['nama_jaksa'] ?> <?php echo tgl_jam_sql($tgl_start)."</b> sampai dengan tanggal <b>".tgl_jam_sql($tgl_end)."</b>";?></h3>
+		<!-- <h3><b> DATA JAKSA <?php //echo $data['nama_jaksa'] ?> <?php //echo tgl_jam_sql($tgl_start)."</b> sampai dengan tanggal <b>".tgl_jam_sql($tgl_end)."</b>";?></h3> -->
         <table class="table table-striped" width="50%">
             <tbody border="1">
                 <tr>
