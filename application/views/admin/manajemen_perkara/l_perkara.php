@@ -67,7 +67,7 @@
 										<a href="<?php echo base_URL()?>manajemen_perkara/perkara/edt/<?php echo $b->id_perkara?>" class="btn btn-success btn-sm" title="Edit Data"><i class="icon-edit icon-white"> </i> Edt</a>
 										<a href="<?php echo base_URL()?>manajemen_perkara/perkara/del/<?php echo $b->id_perkara?>" class="btn btn-warning btn-sm" title="Hapus Data" onclick="return confirm('Anda Yakin..?')"><i class="icon-trash icon-remove">  </i> Del</a>			
 										<a href="<?php echo base_URL()?>posisi_perkara/proses_perkara/<?php echo $b->id_perkara?>" class="btn btn-default btn-sm"  title="Posisi Perkara"><i class="icon-trash icon-list"> </i> Perkara</a>
-										<a href="<?php echo base_URL()?>posisi_penahanan/proses_penahanan/<?php echo $b->id_perkara?>" class="btn btn-info btn-sm" title="Posisi Penahanan"><i class="icon-print icon-white"> </i> Penahanan</a>
+										<a href="<?php echo base_URL()?>posisi_penahanan/proses_penahanan/<?php echo $b->id_perkara?>" class="btn btn-info btn-sm" title="Posisi Penahanan"><i class="icon-certificate icon-white"> </i> Penahanan</a>
 									</div>	
 								</td>
 							</tr>

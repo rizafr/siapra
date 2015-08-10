@@ -108,289 +108,358 @@
 			<div class="row">				
 				<div class="col-lg-6">
 					<!--tab nav start-->
-                      <section class="panel wow slideInLeft" data-wow-duration="2s">
-                          <header class="panel-heading tab-bg-dark-navy-blue ">
-                              <ul class="nav nav-tabs">
-                                  <li class="active">
-                                      <a data-toggle="tab" href="#home">Surat Masuk</a>
-                                  </li>
-                                  <li class="">
-                                      <a data-toggle="tab" href="#about">Surat Keluar</a>
-                                  </li>
-                                  <li class="">
-                                      <a data-toggle="tab" href="#profile">Posisi Penahanan</a>
-                                  </li>
-                                  <li class="">
-                                      <a data-toggle="tab" href="#contact">Posisi Perkara</a>
-                                  </li>
-                              </ul>
-                          </header>
-                          <div class="panel-body">
-                              <div class="tab-content">
-                                  <div id="home" class="tab-pane active">
-                                   <table class="table table-hover personal-task">
-                              <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>
-                                      Target Sell
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-important">75%</span>
-                                  </td>
-                                  <td>
-                                    <div id="work-progress1"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>
-                                      Product Delivery
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-success">43%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress2"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>
-                                      Payment Collection
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-info">67%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress3"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>
-                                      Work Progress
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-warning">30%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress4"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>5</td>
-                                  <td>
-                                      Delivery Pending
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-primary">15%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress5"></div>
-                                  </td>
-                              </tr>
-                              </tbody>
-                          </table>
+					<section class="panel wow slideInLeft" data-wow-duration="2s">
+						<header class="panel-heading tab-bg-dark-navy-blue ">
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a data-toggle="tab" href="#disposi">Disposisi</a>
+								</li> 
+								<li class="">
+									<a data-toggle="tab" href="#home">Surat Masuk</a>
+								</li>
+								<li class="">
+									<a data-toggle="tab" href="#about">Surat Keluar</a>
+								</li>
+								<li class="">
+									<a data-toggle="tab" href="#profile">Posisi Penahanan</a>
+								</li>
+								<li class="">
+									<a data-toggle="tab" href="#contact">Posisi Perkara</a>
+								</li>
+							</ul>
+						</header>
+						<div class="panel-body">
+							<div class="tab-content">
+								<div id="disposisi" class="tab-pane active">
+									<table class="table table-hover personal-task">
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>
+													Disposisi
+												</td>
+												<td>
+													<span class="badge bg-important">75%</span>
+												</td>
+												<td>
+													<div id="work-progress1"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>
+													Product Delivery
+												</td>
+												<td>
+													<span class="badge bg-success">43%</span>
+												</td>
+												<td>
+													<div id="work-progress2"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>
+													Payment Collection
+												</td>
+												<td>
+													<span class="badge bg-info">67%</span>
+												</td>
+												<td>
+													<div id="work-progress3"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>
+													Work Progress
+												</td>
+												<td>
+													<span class="badge bg-warning">30%</span>
+												</td>
+												<td>
+													<div id="work-progress4"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>
+													Delivery Pending
+												</td>
+												<td>
+													<span class="badge bg-primary">15%</span>
+												</td>
+												<td>
+													<div id="work-progress5"></div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-                                  <div id="about" class="tab-pane"><table class="table table-hover personal-task">
-                              <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>
-                                      Target Sell
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-important">75%</span>
-                                  </td>
-                                  <td>
-                                    <div id="work-progress1"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>
-                                      Product Delivery
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-success">43%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress2"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>
-                                      Payment Collection
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-info">67%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress3"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>
-                                      Work Progress
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-warning">30%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress4"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>5</td>
-                                  <td>
-                                      Delivery Pending
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-primary">15%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress5"></div>
-                                  </td>
-                              </tr>
-                              </tbody>
-                          </table></div>
-                                  <div id="profile" class="tab-pane"><table class="table table-hover personal-task">
-                              <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>
-                                      Target Sell
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-important">75%</span>
-                                  </td>
-                                  <td>
-                                    <div id="work-progress1"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>
-                                      Product Delivery
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-success">43%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress2"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>
-                                      Payment Collection
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-info">67%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress3"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>
-                                      Work Progress
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-warning">30%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress4"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>5</td>
-                                  <td>
-                                      Delivery Pending
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-primary">15%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress5"></div>
-                                  </td>
-                              </tr>
-                              </tbody>
-                          </table></div>
-                                  <div id="contact" class="tab-pane"><table class="table table-hover personal-task">
-                              <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>
-                                      Target Sell
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-important">75%</span>
-                                  </td>
-                                  <td>
-                                    <div id="work-progress1"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>
-                                      Product Delivery
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-success">43%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress2"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>
-                                      Payment Collection
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-info">67%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress3"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>
-                                      Work Progress
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-warning">30%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress4"></div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td>5</td>
-                                  <td>
-                                      Delivery Pending
-                                  </td>
-                                  <td>
-                                      <span class="badge bg-primary">15%</span>
-                                  </td>
-                                  <td>
-                                      <div id="work-progress5"></div>
-                                  </td>
-                              </tr>
-                              </tbody>
-                          </table></div>
-                              </div>
-                          </div>
-                      </section>
-                      <!--tab nav start-->
+								<div id="home" class="tab-pane">
+									<table class="table table-hover personal-task">
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>
+													Surat Masuk
+												</td>
+												<td>
+													<span class="badge bg-important">75%</span>
+												</td>
+												<td>
+													<div id="work-progress1"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>
+													Product Delivery
+												</td>
+												<td>
+													<span class="badge bg-success">43%</span>
+												</td>
+												<td>
+													<div id="work-progress2"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>
+													Payment Collection
+												</td>
+												<td>
+													<span class="badge bg-info">67%</span>
+												</td>
+												<td>
+													<div id="work-progress3"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>
+													Work Progress
+												</td>
+												<td>
+													<span class="badge bg-warning">30%</span>
+												</td>
+												<td>
+													<div id="work-progress4"></div>
+												</td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>
+													Delivery Pending
+												</td>
+												<td>
+													<span class="badge bg-primary">15%</span>
+												</td>
+												<td>
+													<div id="work-progress5"></div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div id="about" class="tab-pane"><table class="table table-hover personal-task">
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>
+												Surat Keluar
+											</td>
+											<td>
+												<span class="badge bg-important">75%</span>
+											</td>
+											<td>
+												<div id="work-progress1"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>
+												Product Delivery
+											</td>
+											<td>
+												<span class="badge bg-success">43%</span>
+											</td>
+											<td>
+												<div id="work-progress2"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>
+												Payment Collection
+											</td>
+											<td>
+												<span class="badge bg-info">67%</span>
+											</td>
+											<td>
+												<div id="work-progress3"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>
+												Work Progress
+											</td>
+											<td>
+												<span class="badge bg-warning">30%</span>
+											</td>
+											<td>
+												<div id="work-progress4"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>
+												Delivery Pending
+											</td>
+											<td>
+												<span class="badge bg-primary">15%</span>
+											</td>
+											<td>
+												<div id="work-progress5"></div>
+											</td>
+										</tr>
+									</tbody>
+								</table></div>
+								<div id="profile" class="tab-pane"><table class="table table-hover personal-task">
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>
+												Posisi Penahanan
+											</td>
+											<td>
+												<span class="badge bg-important">75%</span>
+											</td>
+											<td>
+												<div id="work-progress1"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>
+												Product Delivery
+											</td>
+											<td>
+												<span class="badge bg-success">43%</span>
+											</td>
+											<td>
+												<div id="work-progress2"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>
+												Payment Collection
+											</td>
+											<td>
+												<span class="badge bg-info">67%</span>
+											</td>
+											<td>
+												<div id="work-progress3"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>
+												Work Progress
+											</td>
+											<td>
+												<span class="badge bg-warning">30%</span>
+											</td>
+											<td>
+												<div id="work-progress4"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>
+												Delivery Pending
+											</td>
+											<td>
+												<span class="badge bg-primary">15%</span>
+											</td>
+											<td>
+												<div id="work-progress5"></div>
+											</td>
+										</tr>
+									</tbody>
+								</table></div>
+								<div id="contact" class="tab-pane"><table class="table table-hover personal-task">
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>
+												Posisi Perkara
+											</td>
+											<td>
+												<span class="badge bg-important">75%</span>
+											</td>
+											<td>
+												<div id="work-progress1"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>
+												Product Delivery
+											</td>
+											<td>
+												<span class="badge bg-success">43%</span>
+											</td>
+											<td>
+												<div id="work-progress2"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>
+												Payment Collection
+											</td>
+											<td>
+												<span class="badge bg-info">67%</span>
+											</td>
+											<td>
+												<div id="work-progress3"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>
+												Work Progress
+											</td>
+											<td>
+												<span class="badge bg-warning">30%</span>
+											</td>
+											<td>
+												<div id="work-progress4"></div>
+											</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>
+												Delivery Pending
+											</td>
+											<td>
+												<span class="badge bg-primary">15%</span>
+											</td>
+											<td>
+												<div id="work-progress5"></div>
+											</td>
+										</tr>
+									</tbody>
+								</table></div>
+							</div>
+						</div>
+					</section>
+					<!--tab nav start-->
 				</div>
-			
+				
 				<div class="col-lg-6">
 					<!--Grafik Rekapitulasi-->
 					<div id="grafik" class="wow slideInRight" data-wow-duration="2s" ></div>
@@ -401,13 +470,13 @@
 				<div class="col-lg-12">
 					<!--timeline start-->
 					<section class="panel wow slideInLeft" data-wow-duration="3s">
-					 <header class="panel-heading">
-                              Jadwal Sidang
-                              <span class="tools pull-right">
+						<header class="panel-heading">
+							Jadwal Sidang
+							<span class="tools pull-right">
                                 <a class="icon-chevron-down" href="javascript:;"></a>
                                 <a class="icon-remove" href="javascript:;"></a>
-                            </span>
-                          </header>
+							</span>
+						</header>
 						<div class="panel-body">
 							<div class="timeline">
 								<article class="timeline-item">
@@ -504,7 +573,7 @@
 				</div>
 				
 			</div>
-		
+			
 		</section>
 	</section>
 </div>
@@ -551,16 +620,16 @@
 					data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
 					}, {
 					name: 'Surat Keluar',
-					data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-					}, {
-					name: 'Proses Perkara',
-					data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-					}, {
-					name: 'Proses Penahanan',
-					data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+				data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+				}, {
+				name: 'Proses Perkara',
+				data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+				}, {
+				name: 'Proses Penahanan',
+				data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
 				}]
-			});
-		});
-	});
-</script>
-<?php $this->load->view('admin/notifikasi/notifikasi'); ?>
+				});
+				});
+				});
+				</script>
+				<?php $this->load->view('admin/notifikasi/notifikasi'); ?>				
