@@ -280,65 +280,64 @@
 			<div class="wrap">
 				<div class="page-header animated fadeIn" data-wow-duration="2s" id="banner">
 					<div class="row">
-					<div class="" style="padding: 15px 15px 0 15px;">
-					<div class="well well-sm">
-					<img src="<?php echo base_url(); ?>upload/<?php echo $q_instansi->logo; ?>" class="thumbnail span3" style="display: inline; float: left; margin-right: 20px; width: 100px; height: 100px">
-					<h2 style="margin: 15px 0 10px 0; color: #000;"><?php echo $q_instansi->nama; ?></h2>
-					<div style="color: #000; font-size: 16px; font-family: Tahoma" class="clearfix"><b>Alamat : <?php echo $q_instansi->alamat; ?></b></div>
+						<div class="" style="padding: 15px 15px 0 15px;">
+							<div class="well well-sm">
+								<img src="<?php echo base_url(); ?>upload/<?php echo $q_instansi->logo; ?>" class="thumbnail span3" style="display: inline; float: left; margin-right: 20px; width: 100px; height: 100px">
+								<h2 style="margin: 15px 0 10px 0; color: #000;"><?php echo $q_instansi->nama; ?></h2>
+								<div style="color: #000; font-size: 16px; font-family: Tahoma" class="clearfix"><b>Alamat : <?php echo $q_instansi->alamat; ?></b></div>
+							</div>
+						</div>
 					</div>
-					</div>
-					</div>
-					</div>
-					
-					<!-- DINAMIC CONTENT PAGE-->				
-					<?php $this->load->view('admin/'.$page); ?>	
-					<!-- END DINAMIC CONTENT PAGE-->				
-					
-					</div>
-					</div>
-					<div class="footer">
-					<h4 style="font-weight: bold">Proyek Perubahan Diklatpim IV - Sulta </h4>
-					<span> Developed by Ratih Pujihati dan Riza Fauzi Rahman</span>
-					<h6>&copy;  2015. Waktu Eksekusi : {elapsed_time}, Penggunaan Memori : {memory_usage}</h6>
-					<a href="#" class="go-top">
-					<i class="icon-angle-up"></i>
-					</a>
-					</div>
-					
-					</body>
-					<script src="<?php echo base_url(); ?>aset/js/common-scripts.js" type="text/javascript"></script>
-					<script src="<?php echo base_url(); ?>aset/js/jquery.dcjqaccordion.2.7.js" type="text/javascript"></script>
-					<script src="<?php echo base_url(); ?>aset/js/owl.carousel.js" type="text/javascript"></script>
-					<script src="<?php echo base_url(); ?>aset/js/count.js" type="text/javascript"></script>
-					
-					<script src="<?php echo base_url(); ?>aset/js/highcharts.js" type="text/javascript"></script>
-					<script src="<?php echo base_url(); ?>aset/js/exporting.js" type="text/javascript"></script>
-					
-					<!--common script for all pages-->
-					
-					<!--script for this page only-->
-					
-					<script type="text/javascript" charset="utf-8">
-					$(document).ready(function() {
-					$('#example').dataTable( {
-					"aaSorting": [[ 1, "asc" ]]
-					} );
-					} );
-					</script>
-					
-					<!--main content end-->
-					
-					
-					<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/jquery.dataTables.js"></script>
-					<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/DT_bootstrap.js"></script>
-					
-					<script type="text/javascript">
-					$(document).ready(function(){
-					$(" #alert" ).fadeOut(3000);
-					});
-					</script>
-					
-					
-					
-					</html>
-										
+				</div>
+				
+				<!-- DINAMIC CONTENT PAGE-->				
+				<?php $this->load->view('admin/'.$page); ?>	
+				<!-- END DINAMIC CONTENT PAGE-->				
+				
+			</div>
+		</div>
+		<div class="footer">
+			<h4 style="font-weight: bold">Proyek Perubahan Diklatpim IV - Sulta </h4>
+			<span> Developed by Ratih Pujihati dan Riza Fauzi Rahman</span>
+			<h6>&copy;  2015. Waktu Eksekusi : {elapsed_time}, Penggunaan Memori : {memory_usage}</h6>
+			<a href="#" class="go-top">
+				<i class="icon-angle-up"></i>
+			</a>
+		</div>
+		
+	</body>
+	<script src="<?php echo base_url(); ?>aset/js/common-scripts.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>aset/js/jquery.dcjqaccordion.2.7.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>aset/js/owl.carousel.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>aset/js/count.js" type="text/javascript"></script>
+	
+	<script src="<?php echo base_url(); ?>aset/js/highcharts.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>aset/js/exporting.js" type="text/javascript"></script>
+	
+	<!--common script for all pages-->
+	
+	<!--script for this page only-->
+	
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$('#example').dataTable( {
+				"aaSorting": [[ 1, "asc" ]]
+			} );
+		} );
+	</script>
+	
+	<!--main content end-->
+	
+	
+	<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/DT_bootstrap.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(" #alert" ).fadeOut(3000);
+		});
+	</script>
+	
+	
+	
+</html>
