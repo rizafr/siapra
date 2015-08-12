@@ -34,9 +34,9 @@ header('Content-Disposition: attachment; filename="' . basename($file_name) . '"
     </head>
     <body onload="window.print()">
 		<!-- <h3><b> DATA JAKSA <?php //echo $data['nama_jaksa'] ?> <?php //echo tgl_jam_sql($tgl_start)."</b> sampai dengan tanggal <b>".tgl_jam_sql($tgl_end)."</b>";?></h3> -->
-        <table class="table table-striped" width="50%">
+        <table border="1" style="border-top:3px solid #004D66; ">
             <tbody border="1">
-                <tr>
+                <tr style="background-color:#004D66;color: #fff ; border:1px solid #eee ; align:center;"> 
                     <td>No</td>
                     <td>No. Agenda</td>
                     <td>Tanggal Perkara</td>
