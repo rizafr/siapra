@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-inverse navJudul">
 	<div class="container">
 		<div class="navbar-header">
 			<span class="navbar-brand" href="#">Cetak Data</span>

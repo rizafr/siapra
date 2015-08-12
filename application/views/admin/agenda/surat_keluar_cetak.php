@@ -33,18 +33,17 @@ header('Content-Disposition: attachment; filename="' . basename($file_name) . '"
         <link href="<?php echo base_url(); ?>assets/admin/css/bootstrap.css" rel="stylesheet" />
     </head>
     <body onload="window.print()">
-		 <table class="table table-striped" width="50%">
-            <tbody border="1">
-                <tr>
-                    <th width="3%">No</td>
-					<th width="5%">Kode Klas</td>
-					<th width="28%">Isi Ringkas</td>
-					<th width="25%">Tujuan Surat</td>
-					<th width="17%">Nomor Surat</td>
-					<th width="7%">Tgl. Surat</td>
-					<th width="10%">Pengolah</td>
-					<th width="5%">Ket</td>
-				</tr>
+		<table border="1" style="border-top:3px solid #004D66; ">
+			<tr style="background-color:#004D66;color: #fff ; border:1px solid #eee ; align:center;">
+				<th width="3%">No</th>
+				<th width="5%">Kode Klas</th>
+				<th width="28%">Isi Ringkas</th>
+				<th width="25%">Tujuan Surat</th>
+				<th width="17%">Nomor Surat</th>
+				<th width="7%">Tgl. Surat</th>
+				<th width="10%">Pengolah</th>
+				<th width="5%">Ket</th>
+			</tr>
 				
 			<?php 
 			if (!empty($data)) {

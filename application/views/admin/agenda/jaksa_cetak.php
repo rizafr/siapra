@@ -35,35 +35,34 @@ header('Content-Disposition: attachment; filename="' . basename($file_name) . '"
     <body onload="window.print()">
 		<!-- <h3><b> DATA JAKSA <?php //echo $data['nama_jaksa'] ?> <?php //echo tgl_jam_sql($tgl_start)."</b> sampai dengan tanggal <b>".tgl_jam_sql($tgl_end)."</b>";?></h3> -->
         <table border="1" style="border-top:3px solid #004D66; ">
-            <tbody border="1">
-                <tr style="background-color:#004D66;color: #fff ; border:1px solid #eee ; align:center;"> 
-                    <td>No</td>
-                    <td>No. Agenda</td>
-                    <td>Tanggal Perkara</td>
-                    <td>Nama Tersangka</td>
-                    <td>Perkara</td>
-				</tr>
+			<tr style="background-color:#004D66;color: #fff ; border:1px solid #eee ; align:center;">
+				<th>No</th>
+				<th>No. Agenda</th>
+				<th>Tanggal Perkara</th>
+				<th>Nama Tersangka</th>
+				<th>Perkara</th>
+			</tr>
 				
 			<?php 
 			if (!empty($data)) {
 				$no = 0;
-			foreach ($data as $d) {
-				$no++;
-			?>
-			<tr>
-				<td><?php echo $no; ?></td>
-				<td><?php echo $d->no_agenda; ?></td>
-				<td><?php echo tgl_jam_sql($d->tanggal_perkara);; ?></td>
-				<td><?php echo $d->nama_tersangka; ?></td>
-				<td><?php echo $d->perkara; ?></td>
-			</tr>
+				foreach ($data as $d) {
+					$no++;
+				?>
+				<tr>
+					<td><?php echo $no; ?></td>
+					<td><?php echo $d->no_agenda; ?></td>
+					<td><?php echo tgl_jam_sql($d->tanggal_perkara);; ?></td>
+					<td><?php echo $d->nama_tersangka; ?></td>
+					<td><?php echo $d->perkara; ?></td>
+				</tr>
 			<?php 
 				}
 			} else {
 				echo "<tr><td colspan='5' style='text-align: center'>Tidak ada data</td></tr>";
 			}
 			?>
-                </tr>
+        </table>
     </body>
 </html>
 
