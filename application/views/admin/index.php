@@ -151,6 +151,65 @@
 				<div class="navbar-collapse collapse" id="navbar-main">
 					<ul class="nav navbar-nav">	
 						<li><a href="<?php echo base_url(); ?>admin"><i class="icon-home icon-white"> </i> Beranda</a></li>
+						<div class="nav notify-row" id="top_menu">
+							<!--  notification start -->
+							<ul class="nav top-menu">              
+								<!-- notification dropdown start-->
+								<li id="header_notification_bar" class="dropdown">
+									<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+										
+										<i class="icon-envelope icon-white"></i>
+										<span class="badge bg-important">7</span>
+									</a>
+									<ul class="dropdown-menu extended notification">
+										<div class="notify-arrow notify-arrow-red"></div>
+										<li>
+											<p class="red">You have 7 new notifications</p>
+										</li>
+										<li>
+											<a href="#">
+												<span class="label label-danger"><i class="icon-bolt"></i></span>
+												Server #3 overloaded.
+												<span class="small italic">34 mins</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="label label-warning"><i class="icon-bell"></i></span>
+												Server #10 not respoding.
+												<span class="small italic">1 Hours</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="label label-danger"><i class="icon-bolt"></i></span>
+												Database overloaded 24%.
+												<span class="small italic">4 hrs</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="label label-success"><i class="icon-plus"></i></span>
+												New user registered.
+												<span class="small italic">Just now</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="label label-info"><i class="icon-bullhorn"></i></span>
+												Application error.
+												<span class="small italic">10 mins</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">See all notifications</a>
+										</li>
+									</ul>
+								</li>
+								<!-- notification dropdown end -->
+							</ul>
+						</div>
+						
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-th-list icon-white"> </i> Referensi <span class="caret"></span></a>
 							<ul class="dropdown-menu" aria-labelledby="themes">
@@ -158,6 +217,8 @@
 								<li><a tabindex="-1" href="<?php echo base_url(); ?>jaksa/olah_jaksa">Jaksa</a></li>
 							</ul>
 						</li>
+						
+						
 						
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-random icon-white"> </i> Manajemen Surat <span class="caret"></span></a>
@@ -239,9 +300,9 @@
 			<h4 style="font-weight: bold">Proyek Perubahan Diklatpim IV - Sulta </h4>
 			<span> Developed by Ratih Pujihati dan Riza Fauzi Rahman</span>
 			<h6>&copy;  2015. Waktu Eksekusi : {elapsed_time}, Penggunaan Memori : {memory_usage}</h6>
-			 <a href="#" class="go-top">
-            <i class="icon-angle-up"></i>
-        </a>
+			<a href="#" class="go-top">
+				<i class="icon-angle-up"></i>
+			</a>
 		</div>
 		
 	</body>
@@ -256,21 +317,21 @@
 	<!--common script for all pages-->
 	
 	<!--script for this page only-->
-
-		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				$('#example').dataTable( {
-					"aaSorting": [[ 1, "asc" ]]
-				} );
+	
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$('#example').dataTable( {
+				"aaSorting": [[ 1, "asc" ]]
 			} );
-		</script>
-
-<!--main content end-->
-
-
-<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/jquery.dataTables.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/DT_bootstrap.js"></script>
-    
+		} );
+	</script>
+	
+	<!--main content end-->
+	
+	
+	<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>aset/data-tables/DT_bootstrap.js"></script>
+	
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(" #alert" ).fadeOut(3000);
@@ -278,5 +339,5 @@
 	</script>
 	
 	
-		
+	
 </html>
