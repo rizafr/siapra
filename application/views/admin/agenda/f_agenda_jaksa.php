@@ -20,11 +20,11 @@
 			<div class="row">
 				<div class="form-group col-lg-3 ">
 					<label for="code">Dari Tanggal</label>
-					<input type="text" name="tgl_start" id="tgl_start" class="form-control" style="width: 150px" required>
+					<input type="text" name="tgl_start" id="tgl_start" class="form-control" required>
 				</div> 
 				<div class="form-group col-lg-3 ">
 					<label for="code">Sampai Tanggal</label>
-					<input type="text" name="tgl_end" id="tgl_end" class="form-control" style="width: 150px"  required>
+					<input type="text" name="tgl_end" id="tgl_end" class="form-control" required>
 				</div>
 			</div>
 			<div class="row">
