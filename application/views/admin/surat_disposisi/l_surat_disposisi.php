@@ -8,7 +8,9 @@
 						<a class="navbar-brand" href="#">Disposisi Surat</a>
 					</div>
 					<div class="navbar-collapse collapse navbar-inverse-collapse" style="margin-right: -20px">
-						
+						<ul class="nav navbar-nav">
+							<li><a href="<?php echo base_URL(); ?>disposisi/surat_disposisi/<?php echo $this->uri->segment(3)?>/add" class="btn-info"><i class="icon-plus-sign icon-white"> </i> Tambah Data</a></li>
+						</ul>
 						
 					</div><!-- /.nav-collapse -->
 				</div><!-- /.container -->

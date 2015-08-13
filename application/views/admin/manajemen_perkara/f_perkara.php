@@ -39,7 +39,7 @@
 		<div class="col-lg-8">
 			<table class="table-form">
 				<tr><td width="20%">No. Agenda</td><td><b><input type="text" name="no_agenda" id="getAgenda" autofocus tabindex="1" value="<?php echo $no_agenda; ?>" style="width: 100px" class="form-control"></b></td></tr>
-				<tr><td width="20%">Tanggal Perkara</td><td><b><input type="text" id="tanggal_perkara" name="tanggal_perkara" autofocus tabindex="1" value="<?php echo $tanggal_perkara; ?>"  class="form-control"></b></td></tr>
+				<tr><td width="20%">Tanggal Sidang</td><td><b><input type="text" id="tanggal_perkara" name="tanggal_perkara" autofocus tabindex="1" value="<?php echo $tanggal_perkara; ?>"  class="form-control"></b></td></tr>
 				<tr><td width="20%">Nama Tersangka</td><td><b><input type="text" name="nama_tersangka" autofocus tabindex="1" value="<?php echo $nama_tersangka; ?>"  class="form-control"></b></td></tr>
 				<tr><td width="20%">Nama Jaksa</td><td><b>
 					<?php echo form_dropdown('id_jaksa', $jaksa_list, set_value('id_jaksa', isset($id_jaksa) ? $id_jaksa : ''), 'class="form-control m-bot15"'); ?>

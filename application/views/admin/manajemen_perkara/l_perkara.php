@@ -34,14 +34,15 @@
 	-->
 	<div class="adv-table">		
 		<section id="unseen">
-			<table  class="display table table-bordered table-striped table-condensed table-hover" id="example">
+			<table  class="display table table-bordered table-striped table-condensed table-hover" id="l_perkara">
 				<thead>
 					<tr>
 						<th width="10%">No. Agenda</th>
-						<th width="10%">Tanggal Perkara</th>
+						<th width="10%">Tanggal Sidang</th>
 						<th width="15%">Nama Tersangka</th>
 						<th width="20%">Perkara</th>
 						<th width="9%">Jaksa</th>
+						<th width="9%">Status</th>
 						<th width="25%">Aksi</th>
 					</tr>
 				</thead>
@@ -54,13 +55,52 @@
 							} else {
 							$no 	= ($this->uri->segment(4) + 1);
 							foreach ($data as $b) {
+								
+								$tgl1 =  date("Y-m-d");  // 1 Oktober 2009
+								$tgl2 = $b->tanggal_perkara;  // 10 Oktober 2009
+								
+								// memecah tanggal untuk mendapatkan bagian tanggal, bulan dan tahun
+								// dari tanggal pertama
+								
+								$pecah1 = explode("-", $tgl1);
+								$date1 = $pecah1[2];
+								$month1 = $pecah1[1];
+								$year1 = $pecah1[0];
+								
+								// memecah tanggal untuk mendapatkan bagian tanggal, bulan dan tahun
+								// dari tanggal kedua
+								
+								$pecah2 = explode("-", $tgl2);
+								$date2 = $pecah2[2];
+								$month2 = $pecah2[1];
+								$year2 =  $pecah2[0];
+								
+								// menghitung JDN dari masing-masing tanggal
+								
+								$jd1 = GregorianToJD($month1, $date1, $year1);
+								$jd2 = GregorianToJD($month2, $date2, $year2);
+								
+								// hitung selisih hari kedua tanggal
+								
+								$selisih = $jd2 - $jd1;
+								
+								if($selisih>0){
+									$warna ="class danger";
+									$status = $selisih ." hari lagi";
+								}
+								else{
+									$warna ="class info";
+									$status ="Selesai";
+								}
+								
 							?>
-							<tr>
+							<tr class="<?php echo $warna;?>">
 								<td><?php echo $b->no_agenda;?></td>
 								<td><?php echo tgl_jam_sql($b->tanggal_perkara)?></td>
 								<td><?php echo $b->nama_tersangka; ?></td>
 								<td><?php echo $b->perkara?></td>
 								<td> <?php echo $b->nama_jaksa?></td>		
+								<td> <?php echo $status ?></td>		
 								<td>
 									
 									<div class="btn-group">
@@ -75,9 +115,16 @@
 								$no++;
 							}
 						}
-					?>
-				</tbody>
-			</table>
+						?>
+						</tbody>
+							</table>
 		</section>
 	</div>
 </div>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('#l_perkara').dataTable( {
+			"aaSorting": [[ 0, "asc" ]]
+		} );
+	} );
+</script>
