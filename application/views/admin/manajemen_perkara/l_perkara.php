@@ -34,16 +34,16 @@
 	-->
 	<div class="adv-table">		
 		<section id="unseen">
-			<table  class="display table table-bordered table-striped table-condensed table-hover" id="l_perkara">
+			<table  class="display table table-bordered  table-condensed table-hover" id="l_perkara">
 				<thead>
 					<tr>
 						<th width="10%">No. Agenda</th>
 						<th width="10%">Tanggal Sidang</th>
-						<th width="15%">Nama Tersangka</th>
+						<th width="12%">Nama Tersangka</th>
 						<th width="20%">Perkara</th>
 						<th width="9%">Jaksa</th>
 						<th width="9%">Status</th>
-						<th width="25%">Aksi</th>
+						<th width="30%">Aksi</th>
 					</tr>
 				</thead>
 				
@@ -85,24 +85,29 @@
 								$selisih = $jd2 - $jd1;
 								
 								if($selisih>0){
-									$warna ="class danger";
+									$warna ="danger";
 									$status = $selisih ." hari lagi";
+									$label ="label label-danger";
 								}
-								else{
-									$warna ="class info";
-									$status ="Selesai";
+								else if($selisih==0){
+									$warna =" success";
+									$status = "SEDANG BERLANGSUNG";
+									$label ="label label-success";
+								}else if($selisih<0){
+									$warna ="info";
+									$status ="SELESAI";
+									$label ="label label-info ";
 								}
 								
 							?>
-							<tr class="<?php echo $warna;?>">
+							<tr>
 								<td><?php echo $b->no_agenda;?></td>
 								<td><?php echo tgl_jam_sql($b->tanggal_perkara)?></td>
 								<td><?php echo $b->nama_tersangka; ?></td>
 								<td><?php echo $b->perkara?></td>
 								<td> <?php echo $b->nama_jaksa?></td>		
-								<td> <?php echo $status ?></td>		
+								<td> <span class="<?php echo $label ?>"> <?php echo $status ?> </span></td>		
 								<td>
-									
 									<div class="btn-group">
 										<a href="<?php echo base_URL()?>manajemen_perkara/perkara/edt/<?php echo $b->id_perkara?>" class="btn btn-success btn-sm" title="Edit Data"><i class="icon-edit icon-white"> </i> Edt</a>
 										<a href="<?php echo base_URL()?>manajemen_perkara/perkara/del/<?php echo $b->id_perkara?>" class="btn btn-warning btn-sm" title="Hapus Data" onclick="return confirm('Anda Yakin..?')"><i class="icon-trash icon-remove">  </i> Del</a>			
