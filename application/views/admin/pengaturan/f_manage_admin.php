@@ -8,6 +8,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 	$password	= "-";
 	$nama		= $datpil->nama;
 	$nip		= $datpil->nip;
+	$jabatan	= $datpil->jabatan;
 	$id_level	= $datpil->id_level;
 	
 } else {
@@ -17,6 +18,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 	$password	= "";
 	$nama		= "";
 	$nip		= "";
+	$jabatan	= "";
 	$id_level	= "";
 }
 ?>
@@ -50,6 +52,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 		<table width="100%" class="table-form">
 		<tr><td width="20%">Nama</td><td><b><input type="text" name="nama" required value="<?php echo $nama; ?>" style="width: 300px" class="form-control" tabindex="4" ></b></td></tr>
 		<tr><td width="20%">N I P</td><td><b><input type="text" name="nip" required value="<?php echo $nip; ?>" style="width: 300px" class="form-control" tabindex="5" ></b></td></tr>
+		<tr><td width="20%">Jabatan</td><td><b><input type="text" name="jabatan" required value="<?php echo $jabatan; ?>" style="width: 300px" class="form-control" tabindex="5" ></b></td></tr>
 		<tr><td width="20%">Level</td><td><b>
 			<?php echo form_dropdown('id_level', $level_list, set_value('id_level', isset($id_level) ? $id_level : ''), 'class="form-control m-bot15"'); ?>
 			

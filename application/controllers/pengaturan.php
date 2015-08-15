@@ -83,6 +83,7 @@ class Pengaturan extends CI_Controller {
 		$username				= addslashes($this->input->post('username'));
 		$password				= md5(addslashes($this->input->post('password')));
 		$nama					= addslashes($this->input->post('nama'));
+		$jabatan				= addslashes($this->input->post('jabatan'));
 		$nip					= addslashes($this->input->post('nip'));
 		$level					= addslashes($this->input->post('id_level'));
 		$a['level_list'] 		= $this->web_model->get_level_list();
@@ -102,7 +103,7 @@ class Pengaturan extends CI_Controller {
 			$a['datpil']	= $this->db->query("SELECT p.* , l.* FROM pengguna p, level l where p.id_level = l.id_level and  p.id_pengguna = '$idu'")->row();	
 			$a['page']		= "pengaturan/f_manage_admin";
 		} else if ($act == "act_add") {	
-			$this->db->query("INSERT INTO pengguna VALUES (NULL, '$username', '$password', '$nama', '$nip', '$level')");
+			$this->db->query("INSERT INTO pengguna VALUES (NULL, '$username', '$password', '$nama', '$nip','$jabatan', '$level')");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil ditambah</div>");
 			redirect('pengaturan/manage_admin');
 		} else if ($act == "act_edt") {
