@@ -37,7 +37,7 @@
 	</script>
 	<style type="text/css">
 		span,b, .danger{
-		width: 19.5%;
+		width: 20%;
 		display: inline-block;
 		text-align: center;
 		background-color : #fafafa;
@@ -77,12 +77,7 @@
 					<colgroup><col /><col /><col /><col /><col /><col /></colgroup>
 					<thead>
 						<tr>
-							<th>No Agenda </th>
-							<th>Nama Tersangka</th>
-							<th>Perkara</th>
-							<th>Nama Jaksa</th>
-							<th>Status</th>
-						</tr>
+						<th>No Agenda </th><th>Nama Tersangka</th><th>Perkara</th><th>Nama Jaksa</th><th>Status</th></tr>
 					</thead>
 					<tbody>
 						<?php 						
@@ -136,17 +131,11 @@
 								
 							?>
 							<tr class="danger">
-								<td class="danger"><?php echo $b->no_agenda;?></td>
-								<td><?php echo $b->nama_tersangka; ?></td>
-								<td><?php echo $b->perkara?></td>
-								<td><font color='blue'><?php echo $b->nama_jaksa?></font></td>
-								<td> <span class="<?php echo $label ?>"> <?php echo $status ?> </span></td>
+							<td class="danger"><?php echo $b->no_agenda;?></td><td><?php echo $b->nama_tersangka; ?></td><td><?php echo $b->perkara?></td><td><font color='blue'><?php echo $b->nama_jaksa?></font></td><td><div class="<?php echo $label ?>"><?php echo $status ?></div></td>
 							</tr>
 							<?php 
-								
 							}
 						?>
-						
 					</tbody>
 				</table>
 			</div>

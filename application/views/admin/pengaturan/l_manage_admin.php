@@ -28,8 +28,8 @@
 					<tr>
 						<th width="5%">ID</th>
 						<th width="20%">Username</th>
-						<th width="30%">Nama, NIP</th>
-						<th width="15%">Jabatan</th>
+						<th width="25%">Nama, NIP</th>
+						<th width="20%">Jabatan</th>
 						<th width="15%">Level</th>
 						<th width="20%">Aksi</th>
 					</tr>
