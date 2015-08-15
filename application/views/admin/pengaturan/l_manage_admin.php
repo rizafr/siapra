@@ -43,14 +43,14 @@
 							foreach ($data as $b) {
 							?>
 							<tr>
-								<td class="ctr"><?php echo $b->id;?></td>
+								<td class="ctr"><?php echo $b->id_pengguna;?></td>
 								<td><?php echo $b->username?></td>
 								<td><?php echo $b->nama."<br>".$b->nip?></td>
 								<td><?php echo $b->level?></td>
 								<td class="ctr">
 									<div class="btn-group">
-										<a href="<?php echo base_URL(); ?>pengaturan/manage_admin/edt/<?php echo $b->id; ?>" class="btn btn-success btn-sm" title="Edit Data"><i class="icon-edit icon-white"> </i> Edt</a>
-										<!--<a href="<?php echo base_URL(); ?>admin/manage_admin/del/<?php echo $b->id?>" class="btn btn-warning btn-sm" title="Hapus Data" onclick="return confirm('Anda Yakin..?')"><i class="icon-trash icon-remove">  </i> Del</a>-->			
+										<a href="<?php echo base_URL(); ?>pengaturan/manage_admin/edt/<?php echo $b->id_pengguna; ?>" class="btn btn-success btn-sm" title="Edit Data"><i class="icon-edit icon-white"> </i> Edt</a>
+										<a href="<?php echo base_URL(); ?>admin/manage_admin/del/<?php echo $b->id_pengguna?>" class="btn btn-warning btn-sm" title="Hapus Data" onclick="return confirm('Anda Yakin..?')"><i class="icon-trash icon-remove">  </i> Del</a>			
 									</div>					
 								</td>
 							</tr>

@@ -3,12 +3,12 @@ $mode		= $this->uri->segment(3);
 
 if ($mode == "edt" || $mode == "act_edt") {
 	$act		= "act_edt";
-	$idp		= $datpil->id;
+	$idp		= $datpil->id_pengguna;
 	$username	= $datpil->username;
 	$password	= "-";
 	$nama		= $datpil->nama;
 	$nip		= $datpil->nip;
-	$level		= $datpil->level;
+	$id_level	= $datpil->id_level;
 	
 } else {
 	$act		= "act_add";
@@ -17,7 +17,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 	$password	= "";
 	$nama		= "";
 	$nip		= "";
-	$level		= "";
+	$id_level	= "";
 }
 ?>
 <div class="navbar navbar-inverse">
@@ -51,19 +51,8 @@ if ($mode == "edt" || $mode == "act_edt") {
 		<tr><td width="20%">Nama</td><td><b><input type="text" name="nama" required value="<?php echo $nama; ?>" style="width: 300px" class="form-control" tabindex="4" ></b></td></tr>
 		<tr><td width="20%">N I P</td><td><b><input type="text" name="nip" required value="<?php echo $nip; ?>" style="width: 300px" class="form-control" tabindex="5" ></b></td></tr>
 		<tr><td width="20%">Level</td><td><b>
-			<select name="level" class="form-control" style="width: 200px" required tabindex="6" ><option value=""> - Level - </option>
-			<?php
-				$l_sifat	= array('Super Admin','Admin');
-				
-				for ($i = 0; $i < sizeof($l_sifat); $i++) {
-					if ($l_sifat[$i] == $level) {
-						echo "<option selected value='".$l_sifat[$i]."'>".$l_sifat[$i]."</option>";
-					} else {
-						echo "<option value='".$l_sifat[$i]."'>".$l_sifat[$i]."</option>";
-					}				
-				}			
-			?>			
-			</select>
+			<?php echo form_dropdown('id_level', $level_list, set_value('id_level', isset($id_level) ? $id_level : ''), 'class="form-control m-bot15"'); ?>
+			
 			</b></td></tr>
 
 		</table>

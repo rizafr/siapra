@@ -80,7 +80,7 @@ if ($mode == "edt" || $mode == "act_edt") {
 		<tr><td width="20%">Kode Surat</td><td><b><input type="text" name="kode_surat_masuk" tabindex="6" id="kode_surat_masuk" required value="<?php echo $kode_surat_masuk; ?>" style="width: 100px" class="form-control"></b></td></tr>
 		<tr><td width="20%">Indeks Surat</td><td><b><input type="text" name="index_surat_masuk" tabindex="7" value="<?php echo $index_surat_masuk; ?>" style="width: 300px" class="form-control"></b></td></tr>
 		<tr><td width="20%">Tanggal Surat</td><td><b><input type="text" name="tgl_surat_masuk" tabindex="8" required value="<?php echo $tgl_surat_masuk; ?>" id="tgl_surat_masuk" style="width: 100px" class="form-control"></b></td></tr>	
-		<tr><td width="20%">File Surat (Scan)</td><td><b><input type="file" name="lampiran" tabindex="9" class="form-control" style="width: 200px"></b><i><?php echo "<a href='".base_URL()."upload/surat_masuk/".$lampiran."' target='_blank'>".$lampiran."</a>";?></td></tr>
+		<tr><td width="20%">File Surat (Scan)</td><td><b><input type="file" name="lampiran" tabindex="9" class="form-control" style="width: 200px"></b><br /><?php echo "<a href='".base_URL()."upload/surat_masuk/".$lampiran."' target='_blank'> <button type='button' class='btn btn-info '><i class='icon-cloud-upload'></i> ".$lampiran."</button></a>";?></td></tr>
 		<tr><td width="20%">Keterangan</td><td><b><input type="text" name="keterangan" value="<?php echo $keterangan; ?>" tabindex="10" style="width: 400px" class="form-control"></b></td></tr>	
 		</table>	
 	</div>

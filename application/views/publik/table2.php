@@ -90,13 +90,57 @@
 								echo "<tr><td colspan='5'  style='text-align: center; font-weight: bold'>--Data tidak ditemukan--</td></tr>";
 							} 
 							foreach ($data as $b) {
+							
+							$tgl1 =  date("Y-m-d");  // 1 Oktober 2009
+								$tgl2 = $b->tanggal_perkara;  // 10 Oktober 2009
+								
+								// memecah tanggal untuk mendapatkan bagian tanggal, bulan dan tahun
+								// dari tanggal pertama
+								
+								$pecah1 = explode("-", $tgl1);
+								$date1 = $pecah1[2];
+								$month1 = $pecah1[1];
+								$year1 = $pecah1[0];
+								
+								// memecah tanggal untuk mendapatkan bagian tanggal, bulan dan tahun
+								// dari tanggal kedua
+								
+								$pecah2 = explode("-", $tgl2);
+								$date2 = $pecah2[2];
+								$month2 = $pecah2[1];
+								$year2 =  $pecah2[0];
+								
+								// menghitung JDN dari masing-masing tanggal
+								
+								$jd1 = GregorianToJD($month1, $date1, $year1);
+								$jd2 = GregorianToJD($month2, $date2, $year2);
+								
+								// hitung selisih hari kedua tanggal
+								
+								$selisih = $jd2 - $jd1;
+								
+								if($selisih>0){
+									$warna ="danger";
+									$status = $selisih ." hari lagi";
+									$label ="label label-danger";
+								}
+								else if($selisih==0){
+									$warna =" success";
+									$status = "SEDANG BERLANGSUNG";
+									$label ="label label-success";
+								}else if($selisih<0){
+									$warna ="info";
+									$status ="SELESAI";
+									$label ="label label-info ";
+								}
+								
 							?>
 							<tr class="danger">
 								<td class="danger"><?php echo $b->no_agenda;?></td>
 								<td><?php echo $b->nama_tersangka; ?></td>
 								<td><?php echo $b->perkara?></td>
 								<td><font color='blue'><?php echo $b->nama_jaksa?></font></td>
-								<td><small class="label label-danger">SEDANG BERLANGSUNG</small></td>
+								<td> <span class="<?php echo $label ?>"> <?php echo $status ?> </span></td>
 							</tr>
 							<?php 
 								

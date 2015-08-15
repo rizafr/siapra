@@ -52,6 +52,21 @@ class Web_model extends CI_Model {
         return $return;
     }
 	
+	#memilih level
+    function get_level_list() {
+        $this->db->from('level');
+        $this->db->order_by('level', 'asc');
+        $result = $this->db->get();
+        $return = array();
+        if ($result->num_rows() > 0) {
+            $return[''] = "--Pilih Level--";
+            foreach ($result->result_array() as $row) {
+                $return[$row['id_level']] = $row['level'];
+            }
+        }
+        return $return;
+    }
+	
 	
 	
 	//berita

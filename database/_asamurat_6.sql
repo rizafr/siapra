@@ -2,10 +2,10 @@
 -- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Inang: 127.0.0.1
--- Waktu pembuatan: 08 Agu 2015 pada 05.08
--- Versi Server: 5.5.27
--- Versi PHP: 5.4.7
+-- Host: 127.0.0.1
+-- Generation Time: Aug 15, 2015 at 06:08 AM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Basis data: `_asamurat`
+-- Database: `_asamurat`
 --
 CREATE DATABASE `_asamurat` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `_asamurat`;
@@ -25,7 +25,7 @@ USE `_asamurat`;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `disposisi`
+-- Table structure for table `disposisi`
 --
 
 CREATE TABLE IF NOT EXISTS `disposisi` (
@@ -41,22 +41,23 @@ CREATE TABLE IF NOT EXISTS `disposisi` (
   `tgl_disposisi` date NOT NULL,
   `catatan` varchar(300) NOT NULL,
   PRIMARY KEY (`id_disposisi`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
--- Dumping data untuk tabel `disposisi`
+-- Dumping data for table `disposisi`
 --
 
 INSERT INTO `disposisi` (`id_disposisi`, `id_surat_masuk`, `isi_instruksi`, `tgl_instruksi`, `batas_waktu`, `waktu_lama_instruksi`, `paraf_kasi`, `paraf_kajari`, `tujuan_disposisi`, `tgl_disposisi`, `catatan`) VALUES
 (1, 0, '', '0000-00-00', '0000-00-00', 0, '', '', '', '0000-00-00', ''),
 (2, 1, 'Laksanakan\r\n', '2015-07-30', '2015-07-29', 3, '', '1', 'Kasi Pidum', '2015-07-30', 'Laksanakan'),
 (3, 1, 'SIap 86', '2015-07-30', '2015-08-30', 28, '1', '1', 'Kajari', '2015-07-30', 'Laksanakan'),
-(4, 1, 'tes', '2015-08-01', '2015-07-14', 18, '1', '1', 'Kasi Pidum', '2015-08-01', '');
+(4, 1, 'tes', '2015-08-01', '2015-07-14', 18, '1', '1', 'Kasi Pidum', '2015-08-01', ''),
+(5, 2, 'Segera', '2015-08-13', '2016-08-17', 369, '1', '', 'Kasi Pidum', '2015-08-13', '-');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jaksa`
+-- Table structure for table `jaksa`
 --
 
 CREATE TABLE IF NOT EXISTS `jaksa` (
@@ -67,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `jaksa` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `jaksa`
+-- Dumping data for table `jaksa`
 --
 
 INSERT INTO `jaksa` (`id_jaksa`, `nip`, `nama_jaksa`) VALUES
@@ -77,7 +78,59 @@ INSERT INTO `jaksa` (`id_jaksa`, `nip`, `nama_jaksa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `perkara`
+-- Table structure for table `level`
+--
+
+CREATE TABLE IF NOT EXISTS `level` (
+  `id_level` int(11) NOT NULL AUTO_INCREMENT,
+  `level` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_level`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `level`
+--
+
+INSERT INTO `level` (`id_level`, `level`) VALUES
+(1, 'Super Admin'),
+(2, 'Bagian Administrasi'),
+(3, 'Kasi Pidum'),
+(4, 'Kajari'),
+(5, 'Jaksa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengguna`
+--
+
+CREATE TABLE IF NOT EXISTS `pengguna` (
+  `id_pengguna` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `nama` varchar(200) NOT NULL,
+  `nip` varchar(20) NOT NULL,
+  `jabatan` varchar(200) NOT NULL,
+  `id_level` int(10) NOT NULL,
+  PRIMARY KEY (`id_pengguna`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `pengguna`
+--
+
+INSERT INTO `pengguna` (`id_pengguna`, `username`, `password`, `nama`, `nip`, `jabatan`, `id_level`) VALUES
+(1, 'admin', '0cc175b9c0f1b6a831c399e269772661', 'Riza Fauzi Rahman', '123456789123456', 'Administrator', 1),
+(2, 'ratih', 'a5bd72a3d2c4d1686415f93a46fc7a0a', 'Ratih Pujihati', '123456789', 'Adminsitrator', 1),
+(3, 'pidum', '818767fe3d423ffeac7b8c03af827f3e', 'Kasi Pidum', '123456789123456', 'Kasi Pidum', 3),
+(4, 'kajari', 'ec326e3752a6419e328ae0c2e910e1c0', 'Kajari', '123456789', 'Kajari', 4),
+(5, 'jaksa', '7cc8b7b34ceaedba106d53e02b348707', 'Jaksa', '123456789123456', 'Jaksa', 5),
+(6, 'staf', '7b8a17c3f48d4453fde0fd74b4fa9212', 'Staf', '123456789123456', 'Staf', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `perkara`
 --
 
 CREATE TABLE IF NOT EXISTS `perkara` (
@@ -91,37 +144,60 @@ CREATE TABLE IF NOT EXISTS `perkara` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
--- Dumping data untuk tabel `perkara`
+-- Dumping data for table `perkara`
 --
 
 INSERT INTO `perkara` (`id_perkara`, `no_agenda`, `tanggal_perkara`, `nama_tersangka`, `perkara`, `id_jaksa`) VALUES
-(1, '0001', '2011-08-31', 'Muslihat saja', 'Preman Pensiun 2', 2),
-(3, '0002', '2007-02-08', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(4, '0003', '2007-02-08', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(6, '001', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 2', 2),
-(7, '002', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(8, '003', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(9, '004', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 3', 1),
-(10, '005', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
-(11, '006', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(12, '007', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 4', 1),
-(13, '008', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
-(14, '009', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(15, '010', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 5', 1),
-(16, '011', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
-(17, '012', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(18, '013', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 6', 2),
-(19, '014', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(20, '015', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(21, '016', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 7', 2),
-(22, '017', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
-(23, '018', '0000-00-00', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
-(24, '019', '0000-00-00', 'Muslihat saja', 'Preman Pensiun 8', 1);
+(3, '0002', '2015-08-13', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(4, '0003', '2007-02-08', 'Dikdik', 'Khasanah Dunia Pencopetan', 0),
+(6, '001', '2015-08-15', 'Muslihat saja', 'Preman Pensiun 2', 2),
+(7, '002', '2015-08-14', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(8, '003', '2015-08-21', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(9, '004', '2015-08-11', 'Muslihat saja', 'Preman Pensiun 3', 1),
+(10, '005', '2015-08-10', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
+(11, '006', '2015-08-11', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(12, '007', '2015-08-13', 'Muslihat saja', 'Preman Pensiun 4', 1),
+(13, '008', '2015-08-22', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
+(14, '009', '2015-08-12', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(15, '010', '2015-08-14', 'Muslihat saja', 'Preman Pensiun 5', 1),
+(16, '011', '2015-08-12', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
+(17, '012', '2015-08-11', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(18, '013', '2015-08-20', 'Muslihat saja', 'Preman Pensiun 6', 2),
+(19, '014', '2015-08-18', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(20, '015', '2015-08-10', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(21, '016', '2015-08-20', 'Muslihat saja', 'Preman Pensiun 7', 2),
+(22, '017', '2015-08-13', 'Dikdik', 'Khasanah Dunia Pencopetan', 1),
+(23, '018', '2015-08-19', 'Dikdik', 'Khasanah Dunia Pencopetan', 2),
+(24, '019', '2015-08-12', 'Muslihat saja', 'Preman Pensiun 8', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `posisi_perkara`
+-- Table structure for table `posisi_penahanan`
+--
+
+CREATE TABLE IF NOT EXISTS `posisi_penahanan` (
+  `id_posisi_penahanan` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_posisi_penahanan` varchar(100) NOT NULL,
+  `lama_posisi_penahanan` int(10) NOT NULL,
+  PRIMARY KEY (`id_posisi_penahanan`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `posisi_penahanan`
+--
+
+INSERT INTO `posisi_penahanan` (`id_posisi_penahanan`, `nama_posisi_penahanan`, `lama_posisi_penahanan`) VALUES
+(1, 'Penyidik', 20),
+(2, 'Perpanjangan Tuntutan Hukum', 40),
+(3, 'Pengadilan', 30),
+(4, 'Penuntut Umum', 20),
+(5, 'Perpanjangan Pengadilan', 40);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posisi_perkara`
 --
 
 CREATE TABLE IF NOT EXISTS `posisi_perkara` (
@@ -131,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `posisi_perkara` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data untuk tabel `posisi_perkara`
+-- Dumping data for table `posisi_perkara`
 --
 
 INSERT INTO `posisi_perkara` (`id_posisi_perkara`, `nama_posisi_perkara`) VALUES
@@ -151,7 +227,7 @@ INSERT INTO `posisi_perkara` (`id_posisi_perkara`, `nama_posisi_perkara`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ref_klasifikasi`
+-- Table structure for table `ref_klasifikasi`
 --
 
 CREATE TABLE IF NOT EXISTS `ref_klasifikasi` (
@@ -163,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `ref_klasifikasi` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=176 ;
 
 --
--- Dumping data untuk tabel `ref_klasifikasi`
+-- Dumping data for table `ref_klasifikasi`
 --
 
 INSERT INTO `ref_klasifikasi` (`id`, `kode`, `nama`, `uraian`) VALUES
@@ -346,7 +422,7 @@ INSERT INTO `ref_klasifikasi` (`id`, `kode`, `nama`, `uraian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_masuk`
+-- Table structure for table `surat_masuk`
 --
 
 CREATE TABLE IF NOT EXISTS `surat_masuk` (
@@ -368,17 +444,17 @@ CREATE TABLE IF NOT EXISTS `surat_masuk` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `surat_masuk`
+-- Dumping data for table `surat_masuk`
 --
 
 INSERT INTO `surat_masuk` (`id_surat_masuk`, `kode_surat_masuk`, `no_surat_masuk`, `asal_surat_masuk`, `tgl_surat_masuk`, `status_surat_masuk`, `perihal_surat_masuk`, `index_surat_masuk`, `no_agenda`, `lampiran`, `tgl_diterima`, `pengolah`, `keterangan`, `status_disposisi`) VALUES
 (1, 'KU.02.2', 'kdkdkdk', 'Polisi Selawi', '2015-07-31', 'Penting', 'Korupsi', 'DAERAH', '0001', 'laptop.png', '2015-07-30', 1, '-', 1),
-(2, 'KU.00.1', 'kdkdkdk', 'Polisi Selawi', '2015-08-17', 'Biasa', 'Khasanah dunia Pencopetan', 'DAERAH', '0002', 'laptop.png', '2015-07-30', 1, '-', 1);
+(2, 'KU.00.1', '1231', 'Polisi Selawi', '2015-08-17', 'Rahasia', 'Khasanah dunia Pencopetan', 'DAERAH', '0002', 'siapra_disposisi_disposisi_cetak_1.pdf', '2015-07-30', 1, '-', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `t_admin`
+-- Table structure for table `t_admin`
 --
 
 CREATE TABLE IF NOT EXISTS `t_admin` (
@@ -387,23 +463,25 @@ CREATE TABLE IF NOT EXISTS `t_admin` (
   `password` varchar(75) NOT NULL,
   `nama` varchar(15) NOT NULL,
   `nip` varchar(25) NOT NULL,
-  `level` enum('Super Admin','Admin') NOT NULL,
+  `level` enum('Super Admin','Admin','Pidum','Kajari') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
--- Dumping data untuk tabel `t_admin`
+-- Dumping data for table `t_admin`
 --
 
 INSERT INTO `t_admin` (`id`, `username`, `password`, `nama`, `nip`, `level`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Riza Fauzi R', '19900326 201401 1 002', 'Super Admin'),
-(2, 'umum', 'adfab9c56b8b16d6c067f8d3cff8818e', 'Nur Akhwan', '19900326 201401 1 002', 'Admin'),
-(3, 'admin1', 'e00cf25ad42683b3df678c61f42c6bda', 'Administrator 1', '199003262017011001', 'Admin');
+(2, 'umum', 'a5bd72a3d2c4d1686415f93a46fc7a0a', 'Ratih Pujihati', '19900326 201401 1 002', 'Super Admin'),
+(3, 'admin1', 'e00cf25ad42683b3df678c61f42c6bda', 'Administrator 1', '199003262017011001', 'Admin'),
+(4, 'pidum', '818767fe3d423ffeac7b8c03af827f3e', 'Kasi Pidum', '123456', 'Pidum'),
+(5, 'kajari', 'ec326e3752a6419e328ae0c2e910e1c0', 'Kajari', '123456', 'Kajari');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `t_disposisi`
+-- Table structure for table `t_disposisi`
 --
 
 CREATE TABLE IF NOT EXISTS `t_disposisi` (
@@ -418,7 +496,7 @@ CREATE TABLE IF NOT EXISTS `t_disposisi` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `t_disposisi`
+-- Dumping data for table `t_disposisi`
 --
 
 INSERT INTO `t_disposisi` (`id`, `id_surat`, `kpd_yth`, `isi_disposisi`, `sifat`, `batas_waktu`, `catatan`) VALUES
@@ -427,7 +505,7 @@ INSERT INTO `t_disposisi` (`id`, `id_surat`, `kpd_yth`, `isi_disposisi`, `sifat`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `t_surat_keluar`
+-- Table structure for table `t_surat_keluar`
 --
 
 CREATE TABLE IF NOT EXISTS `t_surat_keluar` (
@@ -446,7 +524,7 @@ CREATE TABLE IF NOT EXISTS `t_surat_keluar` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `t_surat_keluar`
+-- Dumping data for table `t_surat_keluar`
 --
 
 INSERT INTO `t_surat_keluar` (`id`, `kode`, `no_agenda`, `isi_ringkas`, `tujuan`, `no_surat`, `tgl_surat`, `tgl_catat`, `keterangan`, `file`, `pengolah`) VALUES
@@ -455,7 +533,7 @@ INSERT INTO `t_surat_keluar` (`id`, `kode`, `no_agenda`, `isi_ringkas`, `tujuan`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `t_surat_keputusan`
+-- Table structure for table `t_surat_keputusan`
 --
 
 CREATE TABLE IF NOT EXISTS `t_surat_keputusan` (
@@ -473,7 +551,7 @@ CREATE TABLE IF NOT EXISTS `t_surat_keputusan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `t_surat_masuk`
+-- Table structure for table `t_surat_masuk`
 --
 
 CREATE TABLE IF NOT EXISTS `t_surat_masuk` (
@@ -493,7 +571,7 @@ CREATE TABLE IF NOT EXISTS `t_surat_masuk` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data untuk tabel `t_surat_masuk`
+-- Dumping data for table `t_surat_masuk`
 --
 
 INSERT INTO `t_surat_masuk` (`id`, `kode`, `no_agenda`, `indek_berkas`, `isi_ringkas`, `dari`, `no_surat`, `tgl_surat`, `tgl_diterima`, `keterangan`, `file`, `pengolah`) VALUES
@@ -505,7 +583,7 @@ INSERT INTO `t_surat_masuk` (`id`, `kode`, `no_agenda`, `indek_berkas`, `isi_rin
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tr_instansi`
+-- Table structure for table `tr_instansi`
 --
 
 CREATE TABLE IF NOT EXISTS `tr_instansi` (
@@ -519,7 +597,7 @@ CREATE TABLE IF NOT EXISTS `tr_instansi` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `tr_instansi`
+-- Dumping data for table `tr_instansi`
 --
 
 INSERT INTO `tr_instansi` (`id`, `nama`, `alamat`, `kepsek`, `nip_kepsek`, `logo`) VALUES

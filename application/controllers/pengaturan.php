@@ -3,6 +3,7 @@
 class Pengaturan extends CI_Controller {
 	function __construct() {
 		parent::__construct();
+		 $this->load->model('web_model');
 	}
 	
 		
@@ -83,38 +84,38 @@ class Pengaturan extends CI_Controller {
 		$password				= md5(addslashes($this->input->post('password')));
 		$nama					= addslashes($this->input->post('nama'));
 		$nip					= addslashes($this->input->post('nip'));
-		$level					= addslashes($this->input->post('level'));
-		
+		$level					= addslashes($this->input->post('id_level'));
+		$a['level_list'] 		= $this->web_model->get_level_list();
 		$cari					= addslashes($this->input->post('q'));
 
 		
 		if ($act == "del") {
-			$this->db->query("DELETE FROM t_admin WHERE id = '$idu'");
+			$this->db->query("DELETE FROM pengguna WHERE id_pengguna = '$idu'");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil diubah</div>");
 			redirect('pengaturan/manage_admin');
 		} else if ($act == "cari") {
-			$a['data']		= $this->db->query("SELECT * FROM t_admin WHERE nama LIKE '%$cari%' ORDER BY id DESC")->result();
+			$a['data']		= $this->db->query("SELECT p.*, l.* FROM pengguna p, level l WHERE p.nama LIKE '%$cari%' AND p.id_level = l.id_level  ORDER BY id DESC")->result();
 			$a['page']		= "pengaturan/l_manage_admin";
 		} else if ($act == "add") {
 			$a['page']		= "pengaturan/f_manage_admin";
 		} else if ($act == "edt") {
-			$a['datpil']	= $this->db->query("SELECT * FROM t_admin WHERE id = '$idu'")->row();	
+			$a['datpil']	= $this->db->query("SELECT p.* , l.* FROM pengguna p, level l where p.id_level = l.id_level and  p.id_pengguna = '$idu'")->row();	
 			$a['page']		= "pengaturan/f_manage_admin";
 		} else if ($act == "act_add") {	
-			$this->db->query("INSERT INTO t_admin VALUES (NULL, '$username', '$password', '$nama', '$nip', '$level')");
+			$this->db->query("INSERT INTO pengguna VALUES (NULL, '$username', '$password', '$nama', '$nip', '$level')");
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil ditambah</div>");
 			redirect('pengaturan/manage_admin');
 		} else if ($act == "act_edt") {
 			if ($password = md5("-")) {
-				$this->db->query("UPDATE t_admin SET username = '$username', nama = '$nama', nip = '$nip', level = '$level' WHERE id = '$idp'");
+				$this->db->query("UPDATE pengguna SET username = '$username', nama = '$nama', nip = '$nip', id_level = '$level' WHERE id_pengguna = '$idp'");
 			} else {
-				$this->db->query("UPDATE t_admin SET username = '$username', password = '$password', nama = '$nama', nip = '$nip', level = '$level' WHERE id = '$idp'");
+				$this->db->query("UPDATE pengguna SET username = '$username', password = '$password', nama = '$nama', nip = '$nip', id_level = '$level' WHERE id_pengguna = '$idp'");
 			}
 			
 			$this->session->set_flashdata("k", "<div class=\"alert alert-success\" id=\"alert\">Data berhasil diubah </div>");			
 			redirect('pengaturan/manage_admin');
 		} else {
-			$a['data']		= $this->db->query("SELECT * FROM t_admin LIMIT $awal, $akhir ")->result();
+			$a['data']		= $this->db->query("SELECT p.* , l.* FROM pengguna p, level l where p.id_level = l.id_level LIMIT $awal, $akhir ")->result();
 			$a['page']		= "pengaturan/l_manage_admin";
 		}
 		
@@ -137,7 +138,7 @@ class Pengaturan extends CI_Controller {
 		$p3				= md5($this->input->post('p3'));
 		
 		if ($ke == "simpan") {
-			$cek_password_lama	= $this->db->query("SELECT password FROM t_admin WHERE id = $id_user")->row();
+			$cek_password_lama	= $this->db->query("SELECT password FROM pengguna WHERE id_pengguna = $id_user")->row();
 			//echo 
 			
 			if ($cek_password_lama->password != $p1) {
@@ -147,8 +148,8 @@ class Pengaturan extends CI_Controller {
 				$this->session->set_flashdata('k_passwod', '<div id="alert" class="alert alert-error">Password Baru 1 dan 2 tidak cocok</div>');
 				redirect('pengaturan/passwod');
 			} else {
-				$this->db->query("UPDATE t_admin SET password = '$p3' WHERE id = '1'");
-				$this->session->set_flashdata('k_passwod', '<div id="alert" class="alert alert-success">Password berhasil diperbaharui</div>');
+				$this->db->query("UPDATE pengguna SET password = '$p3' WHERE id_pengguna = '1'");
+				$this->session->set_flashdata('k_passwod', '<div id="alert" class="alert alert-success">Password berhasil diperbaharui. <br /> Mulai sekarang Anda login dengan Password baru Anda.</div>');
 				redirect('pengaturan/passwod');
 			}
 		} else {

@@ -243,7 +243,7 @@
 						</li>
 						
 						<?php
-							if ($this->session->userdata('admin_level') == "Super Admin") {
+							if ($this->session->userdata('admin_id_level') == "1") {
 							?>
 							<li class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes"><i class="icon-wrench icon-white"> </i> Pengaturan <span class="caret"></span></a>
@@ -274,7 +274,6 @@
 		<?php $this->load->view('admin/help/help'); ?>
 		<?php 
 			$q_instansi	= $this->db->query("SELECT * FROM tr_instansi LIMIT 1")->row();
-			echo $this->session->userdata('admin_level');
 		?>
 		<div class="container">
 			<div class="wrap">
@@ -334,7 +333,7 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$(" #alert" ).fadeOut(3000);
+			$(" #alert" ).fadeOut(5000);
 		});
 	</script>
 	
